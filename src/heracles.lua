@@ -289,7 +289,7 @@ for roomSet, encounterTable in pairs(heraclesEncounters) do
     end
 end
 
-table.insert(mod.PostSetupRunData, function ()
+table.insert(mod.PostSetupRunDataFuncs, function ()
     for _, encounterTable in pairs(heraclesEncounters) do
         for encounterName, _ in ipairs(encounterTable) do
             local encounterData = game.EncounterData[encounterName]
