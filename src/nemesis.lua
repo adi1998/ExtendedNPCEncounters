@@ -19,7 +19,35 @@ local nemesisEncounters = {
                 NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", "NemesisBecomingCloserAvailable", },
             },
-        }
+        },
+        NemesisCombatN =
+        {
+            InheritFrom = { "BaseNemesisCombat", "GeneratedN" },
+            CanEncounterSkip = false,
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 1,
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        },
     }
 }
 
