@@ -56,6 +56,32 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedO" },
             DifficultyModifier = 180,
             CanEncounterSkip = false,
+            SkipShipsEncounterSetup = true,
+            GameStateRequirements =
+            {
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "ArtemisCombatIntro" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "UseRecord", "NPC_Artemis_Field_01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 3,
+                },
+                NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "SurfaceRouteLockedByTyphonKill" },
+            },
+            UnthreadedEvents = {
+                { FunctionName = "ShipsEncounterSetup" },
+                { FunctionName = "BeginArtemisEncounter" },
+                { FunctionName = "HandleEnemySpawns" },
+                { FunctionName = "CheckForAllEnemiesDead" },
+                { FunctionName = "PostCombatAudio" },
+                { FunctionName = "SpawnRoomReward" },
+                { FunctionName = "WaitForNextEncounterReady" },
+            },
         },
     },
 

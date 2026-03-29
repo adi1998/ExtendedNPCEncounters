@@ -24,10 +24,12 @@ local config = {
     oceanus = true;
     fields = true;
     tartarus = true;
+    thessaly = true;
     olympus = true;
   };
   nemesis = {
     enabled = true;
+    ephyra = true;
   }
 }
 
@@ -57,7 +59,13 @@ local configDesc = {
     oceanus = "Allow Artemis in Oceanus";
     fields = "Allow Artemis in Fields";
     tartarus = "Allow Artemis in Tartarus";
+    thessaly = "Allow Artemis in Thessaly";
     olympus = "Allow Artemis in Olympus";
+  };
+  nemesis = {
+    enabled = "Enable/disable Extended Nemesis Encounters";
+
+    ephyra = "Allow Nemesis in Ephyra";
   }
 }
 
