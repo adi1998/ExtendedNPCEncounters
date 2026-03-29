@@ -126,6 +126,7 @@ local icarusEncounters = {
             MinWaves = 3,
             MaxWaves = 3,
             GameStateRequirements = {
+                -- TODO: remove append and have all requirements overriden
                 Append = true,
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
