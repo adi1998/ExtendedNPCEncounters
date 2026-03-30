@@ -1,25 +1,5 @@
 local nemesisEncounters = {
     N = {
-        NemesisRandomEventN = {
-            InheritFrom = {"NemesisRandomEvent"},
-            GameStateRequirements =
-            {
-                {
-                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
-                },
-                {
-                    Path = { "CurrentRun", "TextLinesRecord" },
-                    HasNone = { "NemesisCombatFirstIntro", "NemesisWithNarcissus01" },
-                },
-                {
-                    Path = { "CurrentRun", "BiomeDepthCache" },
-                    Comparison = ">=",
-                    Value = 2,
-                },
-                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
-                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", "NemesisBecomingCloserAvailable", },
-            },
-        },
         NemesisCombatN =
         {
             InheritFrom = { "BaseNemesisCombat", "GeneratedN" },
@@ -48,7 +28,30 @@ local nemesisEncounters = {
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
             },
         },
-    }
+    },
+
+    N_SubRooms = {
+        NemesisRandomEventN_SubRoom = {
+            InheritFrom = {"NemesisRandomEvent"},
+            GameStateRequirements =
+            {
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "NemesisCombatFirstIntro", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 5,
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", "NemesisBecomingCloserAvailable", },
+            },
+        },
+    },
 }
 
 local weight = 1

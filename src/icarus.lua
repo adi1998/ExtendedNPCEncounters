@@ -10,7 +10,7 @@ local icarusEncounters = {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
-                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN"}
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "erebus"}
@@ -30,7 +30,7 @@ local icarusEncounters = {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
-                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN"}
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "oceanus"}
@@ -85,7 +85,7 @@ local icarusEncounters = {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
-                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN"}
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
                 },
                 {
                     PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
@@ -110,7 +110,7 @@ local icarusEncounters = {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
-                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN"}
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "tartarus"}
@@ -131,7 +131,7 @@ local icarusEncounters = {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
-                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN"}
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "ephyra"}
@@ -139,6 +139,26 @@ local icarusEncounters = {
             }
         },
     },
+
+    N_SubRooms = {
+        IcarusCombatN_SubRooms = {
+            InheritFrom = { "BaseIcarusCombat", "GeneratedNSubRoom" },
+            DifficultyModifier = 150,
+            MinWaves = 1,
+            MaxWaves = 1,
+            GameStateRequirements = {
+                Append = true,
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
+                                    "IcarusCombatP", "IcarusCombatP2", "IcarusCombatN", "IcarusCombatN_SubRooms"}
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "icarus", "ephyra_sideroom"}
+                }
+            }
+        }
+    }
 }
 
 -- game.OverwriteTableKeys(game.EncounterData, icarusEncounters)

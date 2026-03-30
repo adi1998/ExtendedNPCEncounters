@@ -149,6 +149,24 @@ mod.RoomSets =
 		"N_Combat23",
 	},
 
+	N_SubRooms = {
+		"N_Sub01",
+		"N_Sub02",
+		"N_Sub03",
+		"N_Sub04",
+		"N_Sub05",
+		"N_Sub06",
+		"N_Sub07",
+		"N_Sub08",
+		"N_Sub09",
+		"N_Sub10",
+		"N_Sub11",
+		"N_Sub12",
+		"N_Sub13",
+		"N_Sub14",
+		"N_Sub15",
+	},
+
 	O =
 	{
 		"O_Combat01",

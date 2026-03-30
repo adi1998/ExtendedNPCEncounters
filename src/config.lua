@@ -8,6 +8,7 @@ local config = {
     fields = true;
     tartarus = true;
     ephyra = true;
+    ephyra_sideroom = false;
   };
   heracles = {
     enabled = true;
@@ -43,6 +44,7 @@ local configDesc = {
     fields = "Allow Icarus in Fields";
     tartarus = "Allow Icarus in Tartarus";
     ephyra = "Allow Icarus in Ephyra";
+    ephyra_sideroom = "Allow Icarus in Ephyra side rooms";
   };
   heracles = {
     enabled = "Enable/disable Extended Heracles Encounters";
