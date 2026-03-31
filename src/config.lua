@@ -8,7 +8,7 @@ local config = {
     fields = true;
     tartarus = true;
     ephyra = true;
-    ephyra_sideroom = false;
+    ephyra_sideroom = true;
   };
   heracles = {
     enabled = true;
