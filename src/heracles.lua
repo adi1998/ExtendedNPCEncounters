@@ -214,6 +214,12 @@ local heraclesEncounters = {
             MinWaves = 3,
             MaxWaves = 3,
             HeraclesDummyUnitSet = game.EnemySets.CocoonSpawnsMedium,
+			GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "heracles", "erebus"}
+                }
+			}
         },
     },
 
@@ -224,6 +230,12 @@ local heraclesEncounters = {
             MinWaves = 3,
             MaxWaves = 3,
             HeraclesDummyUnitSet = game.EnemySets.CocoonSpawnsMedium_G,
+			GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "heracles", "oceanus"}
+                }
+			}
         },
     },
 
@@ -252,6 +264,9 @@ local heraclesEncounters = {
 				{
                     PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
                 },
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "heracles", "fields"}
+                },
 			}
         },
     },
@@ -263,6 +278,12 @@ local heraclesEncounters = {
             MinWaves = 3,
             MaxWaves = 3,
             HeraclesDummyUnitSet = game.EnemySets.BiomeI,
+			GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "heracles", "tartarus"}
+                }
+			}
         },
     },
 }

@@ -31,6 +31,7 @@ local config = {
   nemesis = {
     enabled = true;
     ephyra = true;
+    olympus = true;
   }
 }
 
@@ -68,6 +69,7 @@ local configDesc = {
     enabled = "Enable/disable Extended Nemesis Encounters";
 
     ephyra = "Allow Nemesis in Ephyra";
+    olympus = "Allow Nemesis in Olympus";
   }
 }
 

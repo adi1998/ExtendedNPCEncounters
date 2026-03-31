@@ -8,7 +8,7 @@ local nemesisEncounters = {
             {
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
-                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN", "NemesisCombatP" },
                 },
                 {
                     PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
@@ -22,7 +22,10 @@ local nemesisEncounters = {
                 {
                     Path = { "CurrentRun", "BiomeDepthCache" },
                     Comparison = ">=",
-                    Value = 1,
+                    Value = 3,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "ephyra"}
                 },
                 NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
@@ -47,11 +50,49 @@ local nemesisEncounters = {
                     Comparison = ">=",
                     Value = 5,
                 },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "ephyra"}
+                },
                 NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", "NemesisBecomingCloserAvailable", },
             },
         },
     },
+
+    P = {
+        NemesisCombatP = {
+            InheritFrom = {"BaseNemesisCombat", "GeneratedP"},
+            BlockMultipleEncounters = true,
+            CanEncounterSkip = false,
+            RequireRoomTag = "Indoor",
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN", "NemesisCombatP" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "olympus"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        }
+    }
 }
 
 local weight = 1
@@ -64,6 +105,9 @@ for roomSet, encounterTable in pairs(nemesisEncounters) do
             for i = 1, weight do
                 if roomSet ~= "H" then
                     table.insert(roomData.LegalEncounters, encounterName)
+                    if roomData.MultipleEncountersData then
+                        table.insert(roomData.MultipleEncountersData[1].LegalEncounters, encounterName)
+                    end
                 else
                     table.insert(game.ObstacleData.FieldsRewardCage.LegalEncounters, encounterName)
                 end

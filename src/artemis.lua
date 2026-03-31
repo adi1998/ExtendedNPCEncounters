@@ -25,6 +25,9 @@ local artemisEncounters = {
                     HasNone = { "ArtemisCombatF", "ArtemisCombatG", "ArtemisCombatG2", "ArtemisCombatN", "ArtemisCombatN2",
                         "ArtemisCombatIntro", "ArtemisCombatH", "ArtemisCombatI", "ArtemisCombatP" }
                 },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "fields"}
+                },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "SurfaceRouteLockedByTyphonKill" },
             },
@@ -48,6 +51,12 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedI" },
             DifficultyModifier = 200,
             CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "tartarus"}
+                }
+			}
         },
     },
 
@@ -70,6 +79,9 @@ local artemisEncounters = {
                     Comparison = ">=",
                     Value = 3,
                 },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "thessaly"}
+                },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "SurfaceRouteLockedByTyphonKill" },
             },
@@ -91,6 +103,12 @@ local artemisEncounters = {
             DifficultyModifier = 250,
             BlockMultipleEncounters = true,
             CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "olympus"}
+                }
+			}
         },
     },
 }
