@@ -162,6 +162,63 @@ local thanatosEncounters = {
             }
         },
     },
+
+    P = {
+        ThanatosCombatP =
+        {
+            InheritFrom = { "BaseThanatos", "GeneratedP" },
+            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
+            BaseDifficulty = 700,
+            MinTypes = 4,
+            MaxTypes = 5,
+            MaxTypesCap = 5,
+            MinWaves = 3,
+            MaxWaves = 3,
+            EnemySet = game.EnemySets.BiomeP,
+            ActiveEnemyCapBase = 8,
+            BlockMultipleEncounters = true,
+            CanEncounterSkip = false,
+            RequireNotRoomReward = { },
+
+            RequiredMinBiomeDepth = 2,
+
+            HardEncounterOverrideValues =
+            {
+                DepthDifficultyRamp = 40,
+            },
+            LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", "ModsNikkelMHadesBiomesGUIOriginal", "NikkelM-HadesBiomesGUIModded", "NikkelM-HadesBiomesFxModded" },
+            StartRoomUnthreadedEvents = {
+                {
+                    FunctionName = "GenericPresentation",
+                    Args =
+                    {
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
+                    },
+                },
+                {
+                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                }
+            },
+            GameStateRequirements = {
+                Append = true,
+                {
+                    Path = {"CurrentRun", "ThanatosSpawns"},
+                    Comparison = "<",
+                    Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 3,
+                },
+                {
+                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "tartarus" }
+                },
+                NamedRequirements = { "NoRecentFieldNPCEncounter" },
+            }
+        },
+    },
 }
 
 local weight = 1

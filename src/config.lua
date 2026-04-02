@@ -37,6 +37,7 @@ local config = {
     enabled = true;
     erebus = true;
     tartarus = true;
+    olympus = true;
   }
 }
 
@@ -82,6 +83,7 @@ local configDesc = {
     erebus = "Allow Thanatos in Erebus";
     oceanus = "Allow Thanatos in Oceanus";
     tartarus = "Allow Thanatos in Tartarus";
+    olympus = "Allow Thanatos in Olympus";
   }
 }
 
