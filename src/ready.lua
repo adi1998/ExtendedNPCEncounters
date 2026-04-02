@@ -333,12 +333,14 @@ table.insert(mod.PostSetupRunDataFuncs, function ()
 end)
 
 function mod.clampweight(weight)
-	if type(weight) ~= "number" or (weight<1 and weight>20) then
+	if type(weight) == "number" then
 		if weight < 1 then
 			weight = 1
 		elseif weight > 20 then
 			weight = 20
 		end
+	else
+		weight = 1
 	end
 	return weight
 end
