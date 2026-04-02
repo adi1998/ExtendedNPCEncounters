@@ -190,7 +190,8 @@ local icarusEncounters = {
 
 -- game.OverwriteTableKeys(game.EncounterData, icarusEncounters)
 
-local weight = 1
+local weight = config.icarus.weight
+weight = mod.clampweight(weight)
 
 for roomSet, encounterTable in pairs(icarusEncounters) do
     for _, roomName in ipairs(mod.RoomSets[roomSet]) do

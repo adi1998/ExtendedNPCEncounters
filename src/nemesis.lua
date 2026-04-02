@@ -95,7 +95,8 @@ local nemesisEncounters = {
     }
 }
 
-local weight = 1
+local weight = config.nemesis.weight
+weight = mod.clampweight(weight)
 
 for roomSet, encounterTable in pairs(nemesisEncounters) do
     for _, roomName in ipairs(mod.RoomSets[roomSet]) do

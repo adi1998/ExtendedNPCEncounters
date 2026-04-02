@@ -113,7 +113,8 @@ local artemisEncounters = {
     },
 }
 
-local weight = 1
+local weight = config.artemis.weight
+weight = mod.clampweight(weight)
 
 for roomSet, encounterTable in pairs(artemisEncounters) do
     for _, roomName in ipairs(mod.RoomSets[roomSet]) do

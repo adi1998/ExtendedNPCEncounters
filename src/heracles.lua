@@ -290,7 +290,8 @@ local heraclesEncounters = {
 
 -- game.OverwriteTableKeys(game.EncounterData, heraclesEncounters)
 
-local weight = 1
+local weight = config.heracles.weight
+weight = mod.clampweight(weight)
 
 for roomSet, encounterTable in pairs(heraclesEncounters) do
     for _, roomName in ipairs(mod.RoomSets[roomSet]) do

@@ -2,6 +2,7 @@ local config = {
   enabled = true;
   icarus = {
     enabled = true;
+    weight = 1;
 
     erebus = true;
     oceanus = true;
@@ -12,6 +13,7 @@ local config = {
   };
   heracles = {
     enabled = true;
+    weight = 1;
 
     erebus = true;
     oceanus = true;
@@ -20,6 +22,7 @@ local config = {
   };
   artemis = {
     enabled = true;
+    weight = 1;
 
     erebus = true;
     oceanus = true;
@@ -30,11 +33,15 @@ local config = {
   };
   nemesis = {
     enabled = true;
+    weight = 1;
+
     ephyra = true;
     olympus = true;
   };
   thanatos = {
     enabled = true;
+    weight = 1;
+
     erebus = true;
     tartarus = true;
     olympus = true;
@@ -45,6 +52,7 @@ local configDesc = {
   enabled = "Enable/disable Extended NPC Encounters";
   icarus = {
     enabled = "Enable/disable Extended Icarus Encounters";
+    weight = "Weight range: 1-20";
 
     erebus = "Allow Icarus in Erebus";
     oceanus = "Allow Icarus in Oceanus";
@@ -55,6 +63,7 @@ local configDesc = {
   };
   heracles = {
     enabled = "Enable/disable Extended Heracles Encounters";
+    weight = "Weight range: 1-20";
 
     erebus = "Allow Heracles in Erebus";
     oceanus = "Allow Heracles in Oceanus";
@@ -63,6 +72,7 @@ local configDesc = {
   };
   artemis = {
     enabled = "Enable/disable Extended Artemis Encounters";
+    weight = "Weight range: 1-20";
 
     erebus = "Allow Artemis in Erebus";
     oceanus = "Allow Artemis in Oceanus";
@@ -73,12 +83,14 @@ local configDesc = {
   };
   nemesis = {
     enabled = "Enable/disable Extended Nemesis Encounters";
+    weight = "Weight range: 1-20";
 
     ephyra = "Allow Nemesis in Ephyra";
     olympus = "Allow Nemesis in Olympus";
   };
   thanatos = {
     enabled = "Enable/disable Extended Thanatos Encounters";
+    weight = "Weight range: 1-20";
 
     erebus = "Allow Thanatos in Erebus";
     oceanus = "Allow Thanatos in Oceanus";
