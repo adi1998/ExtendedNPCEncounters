@@ -41,6 +41,11 @@ local thanatosEncounters = {
                     Value = 1,
                 },
                 {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
                     PathTrue = {_PLUGIN.guid, "config", "thanatos", "erebus"}
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -90,6 +95,11 @@ local thanatosEncounters = {
                     Value = 1,
                 },
                 {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 3,
+                },
+                {
                     PathTrue = {_PLUGIN.guid, "config", "thanatos", "oceanus"}
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -98,7 +108,7 @@ local thanatosEncounters = {
     },
 
     I = {
-        ThanatosCombatG =
+        ThanatosCombatI =
         {
             InheritFrom = { "BaseThanatos", "GeneratedI" },
             RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
@@ -108,8 +118,10 @@ local thanatosEncounters = {
             MaxTypesCap = 5,
             MinWaves = 3,
             MaxWaves = 3,
-            EnemySet = game.EnemySets.BiomeG,
+            EnemySet = game.EnemySets.BiomeI,
             ActiveEnemyCapBase = 8,
+
+            RequireNotRoomReward = { },
 
             RequiredMinBiomeDepth = 2,
 
@@ -137,6 +149,11 @@ local thanatosEncounters = {
                     Path = {"CurrentRun", "ThanatosSpawns"},
                     Comparison = "<",
                     Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 3,
                 },
                 {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "tartarus" }
