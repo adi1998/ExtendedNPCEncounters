@@ -126,8 +126,19 @@ local icarusEncounters = {
             MinWaves = 3,
             MaxWaves = 3,
             GameStateRequirements = {
-                -- TODO: remove append and have all requirements overriden for custom BiomeDepthCache
-                Append = true,
+                {
+                    PathFalse = { "CurrentRun", "UseRecord", "NPC_Icarus_01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 6,
+                },
+                {
+                    Path = { "GameState", "BiomeVisits", "O" },
+                    Comparison = ">",
+                    Value = 1,
+                },
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
@@ -135,7 +146,9 @@ local icarusEncounters = {
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "ephyra"}
-                }
+                },
+                NamedRequirements = { "NoRecentFieldNPCEncounter" },
+			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         },
     },

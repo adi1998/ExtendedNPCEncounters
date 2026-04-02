@@ -47,8 +47,10 @@ local function on_ready()
     if config.enabled == false then return end
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
-    import 'ready.lua'
+
     mod.PostSetupRunDataFuncs = {}
+
+    import 'ready.lua'
 
     if config.heracles.enabled then
         import 'heracles.lua'
