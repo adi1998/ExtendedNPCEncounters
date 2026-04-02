@@ -293,6 +293,8 @@ local heraclesEncounters = {
 local weight = config.heracles.weight
 weight = mod.clampweight(weight)
 
+local newHeraclesEncounters = {}
+
 for roomSet, encounterTable in pairs(heraclesEncounters) do
     for _, roomName in ipairs(mod.RoomSets[roomSet]) do
         local roomData = game.RoomData[roomName]
@@ -307,20 +309,27 @@ for roomSet, encounterTable in pairs(heraclesEncounters) do
             end
             table.insert(game.NamedRequirementsData.NoRecentHeraclesEncounter[2].TableValuesToCount, encounterName)
             table.insert(game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, encounterName)
+			table.insert(newHeraclesEncounters, encounterName)
         end
     end
 end
 
 table.insert(mod.PostSetupRunDataFuncs, function ()
-    for _, encounterTable in pairs(heraclesEncounters) do
-        for encounterName, _ in ipairs(encounterTable) do
-            local encounterData = game.EncounterData[encounterName]
-            local encounterRequirements = encounterData.GameStateRequirements
-            for _, requirement in ipairs(encounterRequirements) do
-                if requirement.Path and table.concat(requirement.Path, ".") == "CurrentRun.EncountersCompletedCache" and type(requirement.SumOf) == "table" then
-                    table.insert(requirement.SumOf, encounterName)
-                end
-            end
-        end
+	local allHeraclesEncounters = game.ConcatTableValuesIPairs(game.DeepCopyTable(newHeraclesEncounters), {
+		"HeraclesCombatN",
+		"HeraclesCombatN2",
+		"HeraclesCombatO",
+		"HeraclesCombatO2",
+		"HeraclesCombatP",
+		"HeraclesCombatP2",
+	})
+    for _, encounterName in pairs(allHeraclesEncounters) do
+		local encounterData = game.EncounterData[encounterName]
+		local encounterRequirements = encounterData.GameStateRequirements
+		for _, requirement in ipairs(encounterRequirements) do
+			if requirement.Path and table.concat(requirement.Path, ".") == "CurrentRun.EncountersCompletedCache" and type(requirement.SumOf) == "table" then
+				game.ConcatTableValuesIPairs(requirement.SumOf, newHeraclesEncounters)
+			end
+		end
     end
 end)

@@ -317,8 +317,6 @@ modutil.mod.Path.Wrap("RecordEncounter", function (base, run, encounter)
 	end
 end)
 
-game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].SumPrevRooms = 8
-
 table.insert(mod.PostSetupRunDataFuncs, function ()
 	for _, roomName in ipairs(mod.RoomSets["I"]) do
         local roomData = game.RoomData[roomName]
