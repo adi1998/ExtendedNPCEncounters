@@ -322,12 +322,14 @@ game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].SumPrevRooms = 8
 table.insert(mod.PostSetupRunDataFuncs, function ()
 	for _, roomName in ipairs(mod.RoomSets["I"]) do
         local roomData = game.RoomData[roomName]
-		if game.Contains(roomData.LegalEncounters, "GeneratedI") then
-			table.insert(roomData.LegalEncounters, "GeneratedI")
-			table.insert(roomData.LegalEncounters, "GeneratedI_GoalReward")
-		elseif game.Contains(roomData.LegalEncounters, "GeneratedI_Small") then
-			table.insert(roomData.LegalEncounters, "GeneratedI_Small")
-			table.insert(roomData.LegalEncounters, "GeneratedI_Small_GoalReward")
+		for _ = 1, 4 do
+			if game.Contains(roomData.LegalEncounters, "GeneratedI") then
+				table.insert(roomData.LegalEncounters, "GeneratedI")
+				table.insert(roomData.LegalEncounters, "GeneratedI_GoalReward")
+			elseif game.Contains(roomData.LegalEncounters, "GeneratedI_Small") then
+				table.insert(roomData.LegalEncounters, "GeneratedI_Small")
+				table.insert(roomData.LegalEncounters, "GeneratedI_Small_GoalReward")
+			end
 		end
 	end
 end)

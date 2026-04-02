@@ -36,7 +36,7 @@ function mod.HandleHeraclesSpawn( eventSource )
 	game.thread(game.SetupUnit, dummyTarget, game.CurrentRun, setupArgs )
 	currentEncounter.DummyTargetId = dummyTarget.ObjectId
 
-	print("currentEncounter HandleHeraclesSpawn", mod.dump(currentEncounter))
+	-- print("currentEncounter HandleHeraclesSpawn", mod.dump(currentEncounter))
 
 	if not game.EncounterData[currentEncounter.Name].SkipHeraclesSpawnPresentation then
 		mod.HeraclesSpawnPresentation( newUnit, dummyTarget, currentEncounter )
@@ -48,7 +48,7 @@ function mod.HeraclesSpawnPresentation( heracles, dummyTarget, currentEncounter 
 	HideCombatUI("HeraclesIntro")
     currentEncounter[_PLUGIN.guid .. "FieldUnit"] = heracles
 	local encounter = currentEncounter
-	print("CurrentRoom.Encounter", mod.dump(encounter))
+	-- print("CurrentRoom.Encounter", mod.dump(encounter))
 	-- local heracles = ActiveEnemies[encounter.HeraclesId]
 	-- local dummyTarget = ActiveEnemies[encounter.DummyTargetId]
 

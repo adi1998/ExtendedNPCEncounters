@@ -160,7 +160,19 @@ local icarusEncounters = {
             MinWaves = 1,
             MaxWaves = 1,
             GameStateRequirements = {
-                Append = true,
+                {
+                    PathFalse = { "CurrentRun", "UseRecord", "NPC_Icarus_01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 7,
+                },
+                {
+                    Path = { "GameState", "BiomeVisits", "O" },
+                    Comparison = ">",
+                    Value = 1,
+                },
                 {
                     Path = { "CurrentRun", "EncountersOccurredCache" },
                     HasNone = {"IcarusCombatF", "IcarusCombatG", "IcarusCombatH", "IcarusCombatI", "IcarusCombatO", "IcarusCombatO2", "IcarusCombatIntro",
@@ -168,7 +180,9 @@ local icarusEncounters = {
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "ephyra_sideroom"}
-                }
+                },
+                NamedRequirements = { "NoRecentFieldNPCEncounter" },
+			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         }
     }
@@ -271,7 +285,7 @@ end
 
 function mod.SetIcarusPostCombatAI(eventSource)
     local currentEncounter = eventSource
-    print("SetIcarusPostCombatAI", mod.dump(eventSource))
+    -- print("SetIcarusPostCombatAI", mod.dump(eventSource))
     if currentEncounter[_PLUGIN.guid .. "FieldUnit"] then
         local enemy = currentEncounter[_PLUGIN.guid .. "FieldUnit"]
         enemy.AIDisabled = true
