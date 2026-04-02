@@ -32,6 +32,11 @@ local config = {
     enabled = true;
     ephyra = true;
     olympus = true;
+  };
+  thanatos = {
+    enabled = true;
+    erebus = true;
+    tartarus = true;
   }
 }
 
@@ -70,6 +75,13 @@ local configDesc = {
 
     ephyra = "Allow Nemesis in Ephyra";
     olympus = "Allow Nemesis in Olympus";
+  };
+  thanatos = {
+    enabled = "Enable/disable Extended Thanatos Encounters";
+
+    erebus = "Allow Thanatos in Erebus";
+    oceanus = "Allow Thanatos in Oceanus";
+    tartarus = "Allow Thanatos in Tartarus";
   }
 }
 
