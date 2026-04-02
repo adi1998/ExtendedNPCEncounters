@@ -65,7 +65,7 @@ local function on_ready()
         import 'nemesis.lua'
     end
 
-    if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config and rom.mods["NikkelM-Zagreus_Journey"].config.enabled and config.thanatos.enabled then
+    if rom.mods["NikkelM-Zagreus_Journey"] and mods["NikkelM-Zagreus_Journey"].IsValidInstallation and config.thanatos.enabled then
         import 'thanatos.lua'
     end
 

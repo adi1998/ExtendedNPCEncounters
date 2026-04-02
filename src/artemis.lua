@@ -65,7 +65,6 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedO" },
             DifficultyModifier = 180,
             CanEncounterSkip = false,
-            SkipShipsEncounterSetup = true,
             GameStateRequirements =
             {
                 {
@@ -87,6 +86,7 @@ local artemisEncounters = {
             },
             UnthreadedEvents = {
                 { FunctionName = "ShipsEncounterSetup" },
+                { FunctionName = "MultipleEncounterStartPresentation" },
                 { FunctionName = "BeginArtemisEncounter" },
                 { FunctionName = "HandleEnemySpawns" },
                 { FunctionName = "CheckForAllEnemiesDead" },
@@ -127,6 +127,7 @@ for roomSet, encounterTable in pairs(artemisEncounters) do
                 elseif roomSet == "O" then
                     if roomData.MultipleEncountersData then
                         table.insert(roomData.MultipleEncountersData[2].LegalEncounters, encounterName)
+                        table.insert(roomData.MultipleEncountersData[3].LegalEncounters, encounterName)
                     end
                 else
                     table.insert(roomData.LegalEncounters, encounterName)
