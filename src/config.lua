@@ -43,6 +43,7 @@ local config = {
     weight = 1;
 
     erebus = true;
+    oceanus = true;
     tartarus = true;
     olympus = true;
   }

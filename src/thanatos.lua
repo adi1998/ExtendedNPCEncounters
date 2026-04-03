@@ -34,7 +34,11 @@ local thanatosEncounters = {
                 }
             },
             GameStateRequirements = {
-                Append = true,
+                {
+                    -- Didn't have the romance voiceline this run
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "BecameCloseWithThanatos01", "BecameCloseWithThanatos01_B" }
+                },
                 {
                     Path = {"CurrentRun", "ThanatosSpawns"},
                     Comparison = "<",
@@ -46,9 +50,10 @@ local thanatosEncounters = {
                     Value = 4,
                 },
                 {
-                    PathTrue = {_PLUGIN.guid, "config", "thanatos", "erebus"}
+                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "erebus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         },
     },
@@ -88,7 +93,11 @@ local thanatosEncounters = {
                 }
             },
             GameStateRequirements = {
-                Append = true,
+                {
+                    -- Didn't have the romance voiceline this run
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "BecameCloseWithThanatos01", "BecameCloseWithThanatos01_B" }
+                },
                 {
                     Path = {"CurrentRun", "ThanatosSpawns"},
                     Comparison = "<",
@@ -100,9 +109,10 @@ local thanatosEncounters = {
                     Value = 3,
                 },
                 {
-                    PathTrue = {_PLUGIN.guid, "config", "thanatos", "oceanus"}
+                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "oceanus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         },
     },
@@ -144,7 +154,11 @@ local thanatosEncounters = {
                 }
             },
             GameStateRequirements = {
-                Append = true,
+                {
+                    -- Didn't have the romance voiceline this run
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "BecameCloseWithThanatos01", "BecameCloseWithThanatos01_B" }
+                },
                 {
                     Path = {"CurrentRun", "ThanatosSpawns"},
                     Comparison = "<",
@@ -159,6 +173,7 @@ local thanatosEncounters = {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "tartarus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         },
     },
@@ -201,7 +216,11 @@ local thanatosEncounters = {
                 }
             },
             GameStateRequirements = {
-                Append = true,
+                {
+                    -- Didn't have the romance voiceline this run
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "BecameCloseWithThanatos01", "BecameCloseWithThanatos01_B" }
+                },
                 {
                     Path = {"CurrentRun", "ThanatosSpawns"},
                     Comparison = "<",
@@ -213,9 +232,10 @@ local thanatosEncounters = {
                     Value = 3,
                 },
                 {
-                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "tartarus" }
+                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "olympus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive" },
             }
         },
     },
