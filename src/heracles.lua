@@ -300,6 +300,7 @@ for roomSet, encounterTable in pairs(heraclesEncounters) do
         local roomData = game.RoomData[roomName]
         for encounterName, encounterData in pairs(encounterTable) do
             game.EncounterData[encounterName] = encounterData
+			table.insert(mod.NewNPCEncounters, encounterName)
             for i = 1, weight do
                 if roomSet ~= "H" then
                     table.insert(roomData.LegalEncounters, encounterName)

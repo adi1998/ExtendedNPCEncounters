@@ -49,6 +49,7 @@ local function on_ready()
     mod.config = config
 
     mod.PostSetupRunDataFuncs = {}
+    mod.NewNPCEncounters = {}
 
     import 'ready.lua'
 
@@ -72,6 +73,10 @@ local function on_ready()
     game.SetupRunData()
     for _, func in ipairs(mod.PostSetupRunDataFuncs) do
         func()
+    end
+
+    if rom.mods["ReadEmAndWeep-Nightmare_Fear"] and mods["ReadEmAndWeep-Nightmare_Fear"].config and mods["ReadEmAndWeep-Nightmare_Fear"].config.enabled then
+        import "nightmare_fear_compat.lua"
     end
 end
 
