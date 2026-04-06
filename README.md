@@ -1,6 +1,6 @@
 ## Extended NPC Encounters
 
-Adds more NPC encounters to regions they cannot normally appear in.
+Adds more NPC encounters to regions they cannot normally appear in. Also allows Thanatos to appear in H2 biomes if Zagreus' Journey is installed.
 
 <!-- TODO: Add images -->
 
@@ -8,7 +8,7 @@ Adds more NPC encounters to regions they cannot normally appear in.
 
 Use r2modman by ebkr from [Thunderstore](https://thunderstore.io/package/ebkr/r2modman/) or [GitHub](https://github.com/ebkr/r2modmanPlus/releases/latest).
 
-While the mod has been tested decently well, there can still be some scenarios which didn't show up in testing that break the game. It is recommended to backup your save from `%USERPROFILE%\Saved Games\Hades II\Profile*.sav` in case there are issues.
+While the mod has been tested decently well, there can still be some scenarios which didn't show up in testing that softlock the game. It is recommended to backup your save from `%USERPROFILE%\Saved Games\Hades II\Profile*.sav` in case there are issues.
 
 It is recommended not to uninstall the mod or load the game un-modded while in the middle of a modded run.
 

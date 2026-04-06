@@ -203,7 +203,7 @@ function mod.HeraclesPostCombat( enemy )
 		else
 			HeraclesExit( enemy, { WaitTime = 1.5 })
 		end
-	end	
+	end
 end
 
 local heraclesEncounters = {

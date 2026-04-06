@@ -273,7 +273,7 @@ end
 
 function mod.SetUnitPostCombatAI(eventSource)
     local currentEncounter = eventSource
-    print("SetUnitPostCombatAI", mod.dump(eventSource))
+    -- print("SetUnitPostCombatAI", mod.dump(eventSource))
     if currentEncounter[_PLUGIN.guid .. "FieldUnit"] then
         local enemy = currentEncounter[_PLUGIN.guid .. "FieldUnit"]
         enemy.AIDisabled = true
