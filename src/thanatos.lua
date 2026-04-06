@@ -244,26 +244,9 @@ local thanatosEncounters = {
 local weight = config.thanatos.weight
 weight = mod.clampweight(weight)
 
-for roomSet, encounterTable in pairs(thanatosEncounters) do
-    for _, roomName in ipairs(mod.RoomSets[roomSet]) do
-        local roomData = game.RoomData[roomName]
-        for encounterName, encounterData in pairs(encounterTable) do
-            game.EncounterData[encounterName] = encounterData
-            table.insert(mod.NewNPCEncounters, encounterName)
-            for i = 1, weight do
-                if roomSet ~= "H" then
-                    table.insert(roomData.LegalEncounters, encounterName)
-                    if roomData.MultipleEncountersData then
-                        table.insert(roomData.MultipleEncountersData[1].LegalEncounters, encounterName)
-                    end
-                else
-                    table.insert(game.ObstacleData.FieldsRewardCage.LegalEncounters, encounterName)
-                end
-            end
-            table.insert(game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, encounterName)
-        end
-    end
-end
+mod.AddNewEncounters(thanatosEncounters, weight, {
+    game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
+})
 
 function mod.LoadThanatosMusic()
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",

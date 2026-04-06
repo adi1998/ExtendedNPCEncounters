@@ -317,18 +317,12 @@ modutil.mod.Path.Wrap("RecordEncounter", function (base, run, encounter)
 	end
 end)
 
-table.insert(mod.PostSetupRunDataFuncs, function ()
-	for _, roomName in ipairs(mod.RoomSets["I"]) do
-        local roomData = game.RoomData[roomName]
-		for _ = 1, 4 do
-			if game.Contains(roomData.LegalEncounters, "GeneratedI") then
-				table.insert(roomData.LegalEncounters, "GeneratedI")
-				table.insert(roomData.LegalEncounters, "GeneratedI_GoalReward")
-			elseif game.Contains(roomData.LegalEncounters, "GeneratedI_Small") then
-				table.insert(roomData.LegalEncounters, "GeneratedI_Small")
-				table.insert(roomData.LegalEncounters, "GeneratedI_Small_GoalReward")
-			end
-		end
+table.insert(mod.PreSetupRunDataFuncs, function ()
+	for _ = 1, 4 do
+		table.insert(game.EncounterSets.IEncountersDefault, "GeneratedI")
+		table.insert(game.EncounterSets.IEncountersDefault, "GeneratedI_GoalReward")
+		table.insert(game.EncounterSets.IEncountersSmaller, "GeneratedI_Small")
+		table.insert(game.EncounterSets.IEncountersSmaller, "GeneratedI_Small_GoalReward")
 	end
 end)
 
@@ -343,4 +337,91 @@ function mod.clampweight(weight)
 		weight = 1
 	end
 	return weight
+end
+
+function mod.SetRoomEncountersUpdatedFlag(roomData, roomSet)
+	if roomSet == "O" then
+		if roomData.MultipleEncountersData then
+			roomData.MultipleEncountersData[2].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = true
+			roomData.MultipleEncountersData[3].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = true
+		end
+	elseif roomSet ~= "H" then
+		roomData.LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = true
+		if roomData.MultipleEncountersData then
+			roomData.MultipleEncountersData[1].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = true
+		end
+	end
+end
+
+function mod.CheckRoomEncountersUpdated(roomData, roomSet)
+	if roomSet == "O" then
+		if roomData.MultipleEncountersData then
+			return roomData.MultipleEncountersData[2].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"]
+		end
+	elseif roomSet ~= "H" then
+		return roomData.LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"]
+	end
+	return false
+end
+
+function mod.ClearRoomEncountersUpdatedFlag(roomData, roomSet)
+	if roomSet == "O" then
+		if roomData.MultipleEncountersData then
+			roomData.MultipleEncountersData[2].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = nil
+			roomData.MultipleEncountersData[3].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = nil
+		end
+	elseif roomSet ~= "H" then
+		roomData.LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = nil
+		if roomData.MultipleEncountersData then
+			roomData.MultipleEncountersData[1].LegalEncounters[_PLUGIN.guid .. "EncounterArrayUpdated"] = nil
+		end
+	end
+end
+
+function mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName)
+	for i = 1, weight do
+		if roomSet == "O" then
+			if roomData.MultipleEncountersData then
+				table.insert(roomData.MultipleEncountersData[2].LegalEncounters, encounterName)
+				table.insert(roomData.MultipleEncountersData[3].LegalEncounters, encounterName)
+			end
+		elseif roomSet ~= "H" then
+			table.insert(roomData.LegalEncounters, encounterName)
+			if roomData.MultipleEncountersData then
+				table.insert(roomData.MultipleEncountersData[1].LegalEncounters, encounterName)
+			end
+		end
+	end
+end
+
+function mod.AddNewEncounters(newEncoutners, weight, addEncounterNameToTables)
+	for roomSet, encounterTable in pairs(newEncoutners) do
+		for encounterName, encounterData in pairs(encounterTable) do
+			table.insert(mod.NewNPCEncounters, encounterName)
+			game.EncounterData[encounterName] = encounterData
+
+			for _, roomName in ipairs(mod.RoomSets[roomSet]) do
+				local roomData = game.RoomData[roomName]
+				if not mod.CheckRoomEncountersUpdated(roomData, roomSet) then
+					mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName)
+					mod.SetRoomEncountersUpdatedFlag(roomData, roomSet)
+				end
+			end
+
+			for _, roomName in ipairs(mod.RoomSets[roomSet]) do
+				local roomData = game.RoomData[roomName]
+				mod.ClearRoomEncountersUpdatedFlag(roomData, roomSet)
+			end
+
+			if roomSet == "H" then
+				for i = 1, weight do
+					table.insert(game.ObstacleData.FieldsRewardCage.LegalEncounters, encounterName)
+				end
+			end
+
+			for _, array in ipairs(addEncounterNameToTables) do
+				table.insert(array, encounterName)
+			end
+		end
+	end
 end

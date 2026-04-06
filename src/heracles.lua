@@ -295,25 +295,11 @@ weight = mod.clampweight(weight)
 
 local newHeraclesEncounters = {}
 
-for roomSet, encounterTable in pairs(heraclesEncounters) do
-    for _, roomName in ipairs(mod.RoomSets[roomSet]) do
-        local roomData = game.RoomData[roomName]
-        for encounterName, encounterData in pairs(encounterTable) do
-            game.EncounterData[encounterName] = encounterData
-			table.insert(mod.NewNPCEncounters, encounterName)
-            for i = 1, weight do
-                if roomSet ~= "H" then
-                    table.insert(roomData.LegalEncounters, encounterName)
-                else
-                    table.insert(game.ObstacleData.FieldsRewardCage.LegalEncounters, encounterName)
-                end
-            end
-            table.insert(game.NamedRequirementsData.NoRecentHeraclesEncounter[2].TableValuesToCount, encounterName)
-            table.insert(game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, encounterName)
-			table.insert(newHeraclesEncounters, encounterName)
-        end
-    end
-end
+mod.AddNewEncounters(heraclesEncounters, weight, {
+    game.NamedRequirementsData.NoRecentHeraclesEncounter[2].TableValuesToCount,
+	game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
+	newHeraclesEncounters
+})
 
 table.insert(mod.PostSetupRunDataFuncs, function ()
 	local allHeraclesEncounters = game.ConcatTableValuesIPairs(game.DeepCopyTable(newHeraclesEncounters), {

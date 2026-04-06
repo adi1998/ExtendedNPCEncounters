@@ -48,6 +48,7 @@ local function on_ready()
     mod.config = config
 
     mod.PostSetupRunDataFuncs = {}
+    mod.PreSetupRunDataFuncs = {}
     mod.NewNPCEncounters = {}
 
     import 'ready.lua'
@@ -69,7 +70,12 @@ local function on_ready()
         import 'thanatos.lua'
     end
 
+    for _, func in ipairs(mod.PreSetupRunDataFuncs) do
+        func()
+    end
+
     game.SetupRunData()
+
     for _, func in ipairs(mod.PostSetupRunDataFuncs) do
         func()
     end

@@ -116,31 +116,9 @@ local artemisEncounters = {
 local weight = config.artemis.weight
 weight = mod.clampweight(weight)
 
-for roomSet, encounterTable in pairs(artemisEncounters) do
-    for _, roomName in ipairs(mod.RoomSets[roomSet]) do
-        local roomData = game.RoomData[roomName]
-        for encounterName, encounterData in pairs(encounterTable) do
-            game.EncounterData[encounterName] = encounterData
-            table.insert(mod.NewNPCEncounters, encounterName)
-            for i = 1, weight do
-                if roomSet == "H" then
-                    table.insert(game.ObstacleData.FieldsRewardCage.LegalEncounters, encounterName)
-                elseif roomSet == "O" then
-                    if roomData.MultipleEncountersData then
-                        table.insert(roomData.MultipleEncountersData[2].LegalEncounters, encounterName)
-                        table.insert(roomData.MultipleEncountersData[3].LegalEncounters, encounterName)
-                    end
-                else
-                    table.insert(roomData.LegalEncounters, encounterName)
-                    if roomData.MultipleEncountersData then
-                        table.insert(roomData.MultipleEncountersData[1].LegalEncounters, encounterName)
-                    end
-                end
-            end
-            table.insert(game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount, encounterName)
-        end
-    end
-end
+mod.AddNewEncounters(artemisEncounters, weight, {
+    game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount
+})
 
 function mod.CheckArtemisSpawn(encounter, args)
 	if encounter.ArtemisId ~= nil then
