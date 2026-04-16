@@ -378,12 +378,14 @@ function mod.ClearRoomEncountersUpdatedFlag(roomData, roomSet)
 	end
 end
 
-function mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName)
+function mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName, skipShipsEncounterSetup)
 	for i = 1, weight do
-		if roomSet == "O" then
-			if roomData.MultipleEncountersData then
+		if roomSet == "O" and roomData.MultipleEncountersData then
+			if not skipShipsEncounterSetup then
 				table.insert(roomData.MultipleEncountersData[2].LegalEncounters, encounterName)
 				table.insert(roomData.MultipleEncountersData[3].LegalEncounters, encounterName)
+			else
+				table.insert(roomData.MultipleEncountersData[1].LegalEncounters, encounterName)
 			end
 		elseif roomSet ~= "H" then
 			table.insert(roomData.LegalEncounters, encounterName)
@@ -403,7 +405,7 @@ function mod.AddNewEncounters(newEncoutners, weight, addEncounterNameToTables)
 			for _, roomName in ipairs(mod.RoomSets[roomSet]) do
 				local roomData = game.RoomData[roomName]
 				if not mod.CheckRoomEncountersUpdated(roomData, roomSet) then
-					mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName)
+					mod.UpdateEncounterArray(roomData, roomSet, weight, encounterName, encounterData.SkipShipsEncounterSetup)
 					mod.SetRoomEncountersUpdatedFlag(roomData, roomSet)
 				end
 			end

@@ -36,6 +36,7 @@ local config = {
     weight = 1;
 
     ephyra = true;
+    thessaly = true;
     olympus = true;
   };
   thanatos = {
@@ -45,6 +46,7 @@ local config = {
     erebus = true;
     oceanus = true;
     tartarus = true;
+    ephyra = true;
     olympus = true;
   }
 }
@@ -87,6 +89,7 @@ local configDesc = {
     weight = "Weight range: 1-20";
 
     ephyra = "Allow Nemesis in Ephyra";
+    thessaly = "Allow Nemesis in Thessaly";
     olympus = "Allow Nemesis in Olympus";
   };
   thanatos = {
@@ -96,6 +99,7 @@ local configDesc = {
     erebus = "Allow Thanatos in Erebus";
     oceanus = "Allow Thanatos in Oceanus";
     tartarus = "Allow Thanatos in Tartarus";
+    ephyra = "Allow Thanatos in Ephyra";
     olympus = "Allow Thanatos in Olympus";
   }
 }

@@ -178,6 +178,64 @@ local thanatosEncounters = {
         },
     },
 
+    N = {
+        ThanatosCombatN = {
+            InheritFrom = { "BaseThanatos", "GeneratedN" },
+            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
+            BaseDifficulty = 400,
+            MinTypes = 4,
+            MaxTypes = 5,
+            MaxTypesCap = 5,
+            MinWaves = 3,
+            MaxWaves = 3,
+            EnemySet = game.EnemySets.BiomeN,
+            ActiveEnemyCapBase = 8,
+
+            RequiredMinBiomeDepth = 2,
+
+            HardEncounterOverrideValues =
+            {
+                DepthDifficultyRamp = 40,
+            },
+            LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", "ModsNikkelMHadesBiomesGUIOriginal", "NikkelM-HadesBiomesGUIModded", "NikkelM-HadesBiomesFxModded" },
+            StartRoomUnthreadedEvents = {
+                {
+                    FunctionName = "GenericPresentation",
+                    Args =
+                    {
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
+                    },
+                },
+                {
+                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                }
+            },
+            GameStateRequirements = {
+                {
+                    -- Didn't have the romance voiceline this run
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "BecameCloseWithThanatos01", "BecameCloseWithThanatos01_B" }
+                },
+                {
+                    Path = {"CurrentRun", "ThanatosSpawns"},
+                    Comparison = "<",
+                    Value = 1,
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = { _PLUGIN.guid, "config", "thanatos", "ephyra" }
+                },
+                NamedRequirements = { "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive" },
+            }
+        },
+    },
+
     P = {
         ThanatosCombatP =
         {

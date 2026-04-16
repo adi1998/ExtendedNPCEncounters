@@ -59,6 +59,55 @@ local nemesisEncounters = {
         },
     },
 
+    O = {
+        NemesisCombatO = {
+            InheritFrom = {"BaseNemesisCombat", "GeneratedO"},
+            CanEncounterSkip = false,
+            SkipShipsEncounterSetup = true,
+
+            UnthreadedEvents = {
+                { FunctionName = "ShipsEncounterSetup" },
+                { FunctionName = "NemesisEncounterStartPresentation" },
+                { FunctionName = "BeginNemesisEncounter" },
+                { FunctionName = "HandleEnemySpawns" },
+                { FunctionName = "CheckForAllEnemiesDead" },
+                { FunctionName = "NemesisEncounterEndPresentation" },
+                { FunctionName = "PostCombatAudio" },
+                { FunctionName = "SpawnRoomReward" },
+                { FunctionName = "HandleNemesisEncounterReward" },
+                { FunctionName = "NemesisTeleportExitPresentation" },
+                { FunctionName = "WaitForNextEncounterReady" },
+            },
+
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 3,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "thessaly"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        }
+    },
+
     P = {
         NemesisCombatP = {
             InheritFrom = {"BaseNemesisCombat", "GeneratedP"},
@@ -101,4 +150,28 @@ weight = mod.clampweight(weight)
 mod.AddNewEncounters(nemesisEncounters, weight, {
     game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
     game.NamedRequirementsData.NoRecentNemesisEncounter[1].TableValuesToCount
+})
+
+function mod.NemesisPostShipCombatCheckExits( nemesis, args )
+	args = args or {}
+	game.wait( args.Delay )
+	local requiredObjects = game.ShallowCopyTable( game.MapState.RoomRequiredObjects )
+	game.NemesisTeleportExitPresentation( nemesis, args )
+end
+
+table.insert(game.VariantSetData.NPC_Nemesis_01.NemesisCombat.PostTextLineEvents, {
+    Threaded = true,
+    FunctionName = _PLUGIN.guid .. "." .. "NemesisPostShipCombatCheckExits",
+    Args =
+    {
+        RandomWaitMin = 1.0,
+        RandomWaitMax = 3.0,
+    },
+    GameStateRequirements =
+    {
+        {
+            Path = { "CurrentRun", "CurrentRoom", "RoomSetName" },
+            IsAny = { "O", },
+        },
+    },
 })
