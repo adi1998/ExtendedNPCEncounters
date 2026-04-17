@@ -175,3 +175,9 @@ table.insert(game.VariantSetData.NPC_Nemesis_01.NemesisCombat.PostTextLineEvents
         },
     },
 })
+
+table.insert(mod.PostSetupRunDataFuncs, function ()
+    table.insert(game.EncounterData.NemesisCombatH.GameStateRequirements, {
+            PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
+    })
+end)
