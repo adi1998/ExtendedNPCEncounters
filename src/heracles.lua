@@ -56,7 +56,7 @@ function mod.HeraclesSpawnPresentation( heracles, dummyTarget, currentEncounter 
 
 	local encounterData = game.EncounterData[encounter.Name]
 	local spawnWaitDuration = encounterData.HeraclesSpawnWait or 1.5
-	print("dummy id", encounter.DummyTargetId)
+	-- print("dummy id", encounter.DummyTargetId)
 
 	wait(spawnWaitDuration/2.5)
 	AngleTowardTarget({ Id = dummyTarget.ObjectId, DestinationId = CurrentRun.Hero.ObjectId })
@@ -159,7 +159,7 @@ end
 function mod.HeraclesPostCombat( enemy )
 	enemy.PostCombatTravel = true
 	AddTimerBlock( CurrentRun, "HeraclesPostCombat" )
-	print("HeraclesPostCombat")
+	-- print("HeraclesPostCombat")
 	local moveToId = SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId
 	local distanceToTarget = GetDistance({ Id = enemy.ObjectId, DestinationId = moveToId })
 

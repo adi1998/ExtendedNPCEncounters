@@ -277,10 +277,10 @@ function mod.SetIcarusPostCombatAI(eventSource)
     if currentEncounter[_PLUGIN.guid .. "FieldUnit"] then
         local enemy = currentEncounter[_PLUGIN.guid .. "FieldUnit"]
         enemy.AIDisabled = true
-        print("disabled AI", enemy.Name)
+        -- print("disabled AI", enemy.Name)
         -- game.wait(0.01)
         if enemy.PostCombatAI then
-            print("forcing PostCombatAI", _PLUGIN.guid .. "." .. "IcarusPostCombat")
+            -- print("forcing PostCombatAI", _PLUGIN.guid .. "." .. "IcarusPostCombat")
             game.SetAI( _PLUGIN.guid .. "." .. "IcarusPostCombat", enemy )
         end
     end

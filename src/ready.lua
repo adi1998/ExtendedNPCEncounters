@@ -277,10 +277,10 @@ function mod.SetUnitPostCombatAI(eventSource)
     if currentEncounter[_PLUGIN.guid .. "FieldUnit"] then
         local enemy = currentEncounter[_PLUGIN.guid .. "FieldUnit"]
         enemy.AIDisabled = true
-        print("disabled AI", enemy.Name)
+        -- print("disabled AI", enemy.Name)
         -- game.wait(0.01)
         if enemy.PostCombatAI then
-            print("forcing PostCombatAI", enemy.PostCombatAI)
+            -- print("forcing PostCombatAI", enemy.PostCombatAI)
             game.SetAI( enemy.PostCombatAI, enemy )
         end
     end
@@ -291,7 +291,7 @@ modutil.mod.Path.Wrap("SetupUnit", function (base, unit, currentRun, args)
     if game.CurrentRun.CurrentRoom and game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"] ~= nil then
 		local encounterData = game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"]
 		if encounterData.OnSpawnFunctionName ~= nil then
-            print("calling", encounterData.OnSpawnFunctionName)
+            -- print("calling", encounterData.OnSpawnFunctionName)
 			game.CallFunctionName( encounterData.OnSpawnFunctionName, unit, encounterData )
 		end
 	end
