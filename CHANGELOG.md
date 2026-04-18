@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Update readme
+- Fix missing textures for Heracles and Icarus in the Underworld
 
 ## [0.1.0] - 2026-04-17
 
