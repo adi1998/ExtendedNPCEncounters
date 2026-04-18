@@ -19,7 +19,9 @@ It is recommended not to uninstall the mod or load the game un-modded while in t
 
 Mod can be configured through the r2modman config editor. Requires the game to be run atleast once with the mod installed for the default config to be generated.
 
-<img src="images/config_search.png" alt="Config Search" width="30%">
+<div style="display: flex;">
+    <img src="images/config_search.png" alt="Config Search" width="30%">
+</div>
 
 <br>
 
