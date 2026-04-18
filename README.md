@@ -19,13 +19,13 @@ It is recommended not to uninstall the mod or load the game un-modded while in t
 
 Mod can be configured through the r2modman config editor. Requires the game to be run atleast once with the mod installed for the default config to be generated.
 
-![Config Search](images/config_search.png)
+<img src="images/config_search.png" alt="Config Search" width="30%">
 
 <br>
 
 Each new encounter added can disabled/enabled as you see fit. Each NPC can have their chance of showing up in non-vanilla regions configured by setting the `weight` value.
 
-![Config Edit](images/config_edit.png)
+<img src="images/config_edit.png" alt="Config Edit" width="30%">
 
 ## Issues and feedback
 
