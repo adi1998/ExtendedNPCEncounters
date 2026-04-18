@@ -188,10 +188,23 @@ local icarusEncounters = {
     }
 }
 
--- game.OverwriteTableKeys(game.EncounterData, icarusEncounters)
+local zagIcarusEncounters = {
+    Asphodel = {
+        IcarusCombatAsphodel = {
+            InheritFrom = { "BaseIcarusCombat", "GeneratedAsphodel" },
+            DifficultyModifier = 100,
+            MinWaves = 3,
+            MaxWaves = 3,
+        }
+    }
+}
+
+if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config.enabled then
+    game.OverwriteTableKeys(icarusEncounters, zagIcarusEncounters)
+end
 
 local weight = config.icarus.weight
-weight = mod.clampweight(weight)
+weight = 100 or mod.clampweight(weight)
 
 mod.AddNewEncounters(icarusEncounters, weight, {
     game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount

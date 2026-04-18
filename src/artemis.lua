@@ -113,6 +113,20 @@ local artemisEncounters = {
     },
 }
 
+local zagArtemisEncounters = {
+    Tartarus = {
+        ArtemisCombatTartarus = {
+            InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
+            DifficultyModifier = 120,
+            CanEncounterSkip = false,
+        }
+    }
+}
+
+if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config.enabled then
+    game.OverwriteTableKeys(artemisEncounters, zagArtemisEncounters)
+end
+
 local weight = config.artemis.weight
 weight = mod.clampweight(weight)
 

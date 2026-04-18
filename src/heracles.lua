@@ -288,8 +288,6 @@ local heraclesEncounters = {
     },
 }
 
--- game.OverwriteTableKeys(game.EncounterData, heraclesEncounters)
-
 local weight = config.heracles.weight
 weight = mod.clampweight(weight)
 
