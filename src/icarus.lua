@@ -153,9 +153,9 @@ local icarusEncounters = {
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
-        LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
     },
 
     N_SubRooms = {

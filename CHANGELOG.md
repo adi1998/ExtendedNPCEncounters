@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- fixed incorrect LoadPackages field causing nil reference with nightmare fear installed
+
 ## [0.2.0] - 2026-04-18
 
 - Fix missing textures for Heracles and Icarus in the Underworld
