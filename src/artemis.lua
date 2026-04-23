@@ -119,6 +119,25 @@ local zagArtemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
             DifficultyModifier = 120,
             CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "tartarus_nightmare"}
+                }
+			}
+        }
+    },
+    Elysium = {
+        ArtemisCombatElysium = {
+            InheritFrom = { "BaseArtemisCombat", "GeneratedElysium" },
+            DifficultyModifier = 150,
+            CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "elysium"}
+                }
+			}
         }
     }
 }

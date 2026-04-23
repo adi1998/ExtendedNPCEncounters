@@ -201,8 +201,30 @@ local zagIcarusEncounters = {
             DifficultyModifier = 100,
             MinWaves = 3,
             MaxWaves = 3,
+            GameStateRequirements = {
+                Append = true,
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "icarus", "asphodel"}
+                }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         }
-    }
+    },
+    Elysium = {
+        IcarusCombatElysium = {
+            InheritFrom = { "BaseIcarusCombat", "GeneratedElysium" },
+            DifficultyModifier = 150,
+            MinWaves = 3,
+            MaxWaves = 3,
+            GameStateRequirements = {
+                Append = true,
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "icarus", "elysium"}
+                }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+        }
+    },
 }
 
 if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config.enabled then
@@ -210,7 +232,7 @@ if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].c
 end
 
 local weight = config.icarus.weight
-weight = 100 or mod.clampweight(weight)
+weight = mod.clampweight(weight)
 
 mod.AddNewEncounters(icarusEncounters, weight, {
     game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount
