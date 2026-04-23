@@ -23,6 +23,10 @@ local config = {
     oceanus = true;
     fields = true;
     tartarus = true;
+
+    tartarus_nightmare = true;
+    asphodel = true;
+    elysium = true;
   };
   artemis = {
     enabled = true;
@@ -88,6 +92,10 @@ local configDesc = {
     oceanus = "Allow Heracles in Oceanus";
     fields = "Allow Heracles in Fields";
     tartarus = "Allow Heracles in Tartarus";
+
+    tartarus_nightmare = "Allow Heracles in Tartarus(Nightmare)";
+    asphodel = "Allow Heracles in Asphodel";
+    elysium = "Allow Heracles in Elysium";
   };
   artemis = {
     enabled = "Enable/disable Extended Artemis Encounters";

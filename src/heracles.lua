@@ -292,6 +292,62 @@ local heraclesEncounters = {
     },
 }
 
+if mod.IsZag then
+	local zagHeraclesEncounters = {
+		Tartarus = {
+			HeraclesCombatTartarus = {
+				InheritFrom = { "BaseHeraclesCombat", "GeneratedTartarus" },
+				DifficultyModifier = 150,
+				MinWaves = 3,
+				MaxWaves = 3,
+				HeraclesDummyUnitSet = game.EnemySets.EnemiesBiome1,
+				GameStateRequirements = {
+					Append = true,
+					{
+						PathTrue = {_PLUGIN.guid, "config", "heracles", "tartarus_nightmare"}
+					}
+				},
+				LoadPackages = { "Heracles", "BiomeP" },
+			},
+		},
+
+		Asphodel = {
+			HeraclesCombatAsphodel = {
+				InheritFrom = { "BaseHeraclesCombat", "GeneratedAsphodel" },
+				DifficultyModifier = 150,
+				MinWaves = 3,
+				MaxWaves = 3,
+				HeraclesDummyUnitSet = game.EnemySets.EnemiesBiome2,
+				GameStateRequirements = {
+					Append = true,
+					{
+						PathTrue = {_PLUGIN.guid, "config", "heracles", "asphodel"}
+					}
+				},
+				LoadPackages = { "Heracles", "BiomeP" },
+			},
+		},
+
+		Elisium = {
+			HeraclesCombatElysium = {
+				InheritFrom = { "BaseHeraclesCombat", "GeneratedElysium" },
+				DifficultyModifier = 150,
+				MinWaves = 3,
+				MaxWaves = 3,
+				HeraclesDummyUnitSet = game.EnemySets.EnemiesBiome3,
+				GameStateRequirements = {
+					Append = true,
+					{
+						PathTrue = {_PLUGIN.guid, "config", "heracles", "elysium"}
+					}
+				},
+				LoadPackages = { "Heracles", "BiomeP" },
+			},
+		}
+	}
+	game.OverwriteTableKeys(heraclesEncounters, zagHeraclesEncounters)
+end
+
 local weight = config.heracles.weight
 weight = mod.clampweight(weight)
 
