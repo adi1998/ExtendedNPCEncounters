@@ -194,7 +194,42 @@ local icarusEncounters = {
     }
 }
 
--- game.OverwriteTableKeys(game.EncounterData, icarusEncounters)
+local zagIcarusEncounters = {
+    Asphodel = {
+        IcarusCombatAsphodel = {
+            InheritFrom = { "BaseIcarusCombat", "GeneratedAsphodel" },
+            DifficultyModifier = 100,
+            MinWaves = 3,
+            MaxWaves = 3,
+            GameStateRequirements = {
+                Append = true,
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "icarus", "asphodel"}
+                }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+        }
+    },
+    Elysium = {
+        IcarusCombatElysium = {
+            InheritFrom = { "BaseIcarusCombat", "GeneratedElysium" },
+            DifficultyModifier = 150,
+            MinWaves = 3,
+            MaxWaves = 3,
+            GameStateRequirements = {
+                Append = true,
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "icarus", "elysium"}
+                }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+        }
+    },
+}
+
+if mod.IsZag then
+    game.OverwriteTableKeys(icarusEncounters, zagIcarusEncounters)
+end
 
 local weight = config.icarus.weight
 weight = mod.clampweight(weight)

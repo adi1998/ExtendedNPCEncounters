@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add Hades 2 NPC encounters to Zag's journey
+
 ## [0.2.1] - 2026-04-19
 
 - fixed incorrect LoadPackages field causing nil reference with nightmare fear installed

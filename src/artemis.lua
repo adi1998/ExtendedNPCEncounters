@@ -113,6 +113,39 @@ local artemisEncounters = {
     },
 }
 
+local zagArtemisEncounters = {
+    Tartarus = {
+        ArtemisCombatTartarus = {
+            InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
+            DifficultyModifier = 120,
+            CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "tartarus_nightmare"}
+                }
+			}
+        }
+    },
+    Elysium = {
+        ArtemisCombatElysium = {
+            InheritFrom = { "BaseArtemisCombat", "GeneratedElysium" },
+            DifficultyModifier = 150,
+            CanEncounterSkip = false,
+            GameStateRequirements = {
+				Append = true,
+				{
+                    PathTrue = {_PLUGIN.guid, "config", "artemis", "elysium"}
+                }
+			}
+        }
+    }
+}
+
+if mod.IsZag then
+    game.OverwriteTableKeys(artemisEncounters, zagArtemisEncounters)
+end
+
 local weight = config.artemis.weight
 weight = mod.clampweight(weight)
 

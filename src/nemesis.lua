@@ -144,6 +144,132 @@ local nemesisEncounters = {
     }
 }
 
+local zagNemesisEncounters = {
+    Tartarus = {
+        NemesisRandomEventTartarus = {
+            InheritFrom = {"NemesisRandomEvent"},
+            GameStateRequirements =
+            {
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    Path = { "CurrentRun", "TextLinesRecord" },
+                    HasNone = { "NemesisCombatFirstIntro", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "tartarus_nightmare"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", "NemesisBecomingCloserAvailable", },
+            },
+        },
+        NemesisCombatTartarus = {
+            InheritFrom = {"BaseNemesisCombat", "GeneratedTartarus"},
+            CanEncounterSkip = false,
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN", "NemesisCombatP" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "tartarus_nightmare"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        }
+    },
+    Asphodel = {
+        NemesisCombatAsphodel = {
+            InheritFrom = { "BaseNemesisCombat", "GeneratedAsphodel" },
+            CanEncounterSkip = false,
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN", "NemesisCombatP" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "asphodel"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        }
+    },
+    Elysium = {
+        IcarusCombatElysium = {
+            InheritFrom = { "BaseNemesisCombat", "GeneratedElysium" },
+            CanEncounterSkip = false,
+            GameStateRequirements =
+            {
+                {
+                    Path = { "CurrentRun", "EncountersOccurredCache" },
+                    HasNone = { "NemesisCombatIntro", "NemesisCombatF", "NemesisCombatG", "NemesisCombatH", "NemesisCombatI", "NemesisCombatN", "NemesisCombatP" },
+                },
+                {
+                    PathTrue = { "GameState", "EncountersCompletedCache", "NemesisCombatIntro" },
+                },
+                {
+                    PathTrue = { "GameState", "TextLinesRecord", "NemesisGetFreeItemIntro01" },
+                },
+                {
+                    PathFalse = { "CurrentRun", "TextLinesRecord", "NemesisWithNarcissus01" },
+                },
+                {
+                    Path = { "CurrentRun", "BiomeDepthCache" },
+                    Comparison = ">=",
+                    Value = 4,
+                },
+                {
+                    PathTrue = {_PLUGIN.guid, "config", "nemesis", "elysium"}
+                },
+                NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
+                NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
+            },
+        }
+    },
+}
+
+if mod.IsZag then
+    game.OverwriteTableKeys(nemesisEncounters, zagNemesisEncounters)
+end
+
 local weight = config.nemesis.weight
 weight = mod.clampweight(weight)
 
@@ -155,7 +281,6 @@ mod.AddNewEncounters(nemesisEncounters, weight, {
 function mod.NemesisPostShipCombatCheckExits( nemesis, args )
 	args = args or {}
 	game.wait( args.Delay )
-	local requiredObjects = game.ShallowCopyTable( game.MapState.RoomRequiredObjects )
 	game.NemesisTeleportExitPresentation( nemesis, args )
 end
 
