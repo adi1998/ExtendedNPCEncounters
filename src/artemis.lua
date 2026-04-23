@@ -142,7 +142,7 @@ local zagArtemisEncounters = {
     }
 }
 
-if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config.enabled then
+if mod.IsZag then
     game.OverwriteTableKeys(artemisEncounters, zagArtemisEncounters)
 end
 

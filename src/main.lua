@@ -46,6 +46,7 @@ local function on_ready()
     if config.enabled == false then return end
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
+    mod.IsZag = rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config and rom.mods["NikkelM-Zagreus_Journey"].config.enabled and config.zags_journey_integration
 
     mod.PostSetupRunDataFuncs = {}
     mod.PreSetupRunDataFuncs = {}
@@ -66,7 +67,7 @@ local function on_ready()
         import 'nemesis.lua'
     end
 
-    if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config.enabled and config.thanatos.enabled then
+    if mod.IsZag then
         import 'thanatos.lua'
     end
 

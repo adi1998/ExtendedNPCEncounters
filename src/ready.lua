@@ -267,7 +267,7 @@ mod.ZagRoomSets = {
 	},
 }
 
-if rom.mods["NikkelM-Zagreus_Journey"] and rom.mods["NikkelM-Zagreus_Journey"].config and rom.mods["NikkelM-Zagreus_Journey"].config.enabled then
+if mod.IsZag then
 	game.OverwriteTableKeys(mod.RoomSets, mod.ZagRoomSets)
 end
 
@@ -426,4 +426,26 @@ function mod.AddNewEncounters(newEncoutners, weight, addEncounterNameToTables)
 			end
 		end
 	end
+end
+
+-- patching base Thanatos Encounters to be more compatible with new encounters added in Zagreus' Journey
+if mod.IsZag then
+	table.insert(mod.PostSetupRunDataFuncs, function ()
+		local thanatosEncounters = {
+			"ThanatosTartarus",
+			"ThanatosAsphodel",
+			"ThanatosElysium",
+			"ThanatosElysiumIntro"
+		}
+
+		for _, encounterName in ipairs(thanatosEncounters) do
+			local encounter = game.EncounterData[encounterName]
+			if encounter then
+				encounter.GameStateRequirements.NamedRequirements = encounter.GameStateRequirements.NamedRequirements or { }
+				table.insert(encounter.GameStateRequirements.NamedRequirements, "NoRecentFieldNPCEncounter")
+			else
+				print("failed to patch", encounterName, "GameStateRequirements")
+			end
+		end
+	end)
 end

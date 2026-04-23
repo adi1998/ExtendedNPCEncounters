@@ -58,7 +58,9 @@ local config = {
     tartarus = true;
     ephyra = true;
     olympus = true;
-  }
+  };
+
+  zags_journey_integration = true;
 }
 
 local configDesc = {
@@ -122,7 +124,9 @@ local configDesc = {
 
     ephyra = "Allow Thanatos in Ephyra";
     olympus = "Allow Thanatos in Olympus";
-  }
+  };
+
+  zags_journey_integration = "Enable/Disable Zagreus' Journey integration";
 }
 
 return config, configDesc

@@ -304,6 +304,7 @@ weight = mod.clampweight(weight)
 
 mod.AddNewEncounters(thanatosEncounters, weight, {
     game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
+    game.EncounterData["OpeningGenerated"].StartRoomUnthreadedEvents[1].GameStateRequirements[1].HasAny,
 })
 
 function mod.LoadThanatosMusic()
