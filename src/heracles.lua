@@ -328,7 +328,7 @@ if mod.IsZag then
 			},
 		},
 
-		Elisium = {
+		Elysium = {
 			HeraclesCombatElysium = {
 				InheritFrom = { "BaseHeraclesCombat", "GeneratedElysium" },
 				DifficultyModifier = 150,
