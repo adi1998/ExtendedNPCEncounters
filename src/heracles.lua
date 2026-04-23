@@ -219,7 +219,8 @@ local heraclesEncounters = {
 				{
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "erebus"}
                 }
-			}
+			},
+			LoadPackages = { "Heracles", "BiomeP" },
         },
     },
 
@@ -235,7 +236,8 @@ local heraclesEncounters = {
 				{
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "oceanus"}
                 }
-			}
+			},
+			LoadPackages = { "Heracles", "BiomeP" },
         },
     },
 
@@ -267,7 +269,8 @@ local heraclesEncounters = {
 				{
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "fields"}
                 },
-			}
+			},
+			LoadPackages = { "Heracles", "BiomeP" },
         },
     },
 
@@ -283,7 +286,8 @@ local heraclesEncounters = {
 				{
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "tartarus"}
                 }
-			}
+			},
+			LoadPackages = { "Heracles", "BiomeP" },
         },
     },
 }

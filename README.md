@@ -3,16 +3,18 @@
 Adds NPC encounters to regions that they cannot normally appear in. Also allows Thanatos to appear in some H2 biomes if Zagreus' Journey is installed.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="images/artemis.png" alt="Artemis" width="49.7%">
-  <img src="images/icarus.png" alt="Icarus" width="49.7%">
+  <img src="images/artemis.png" alt="Artemis" width="47%">
+  <img src="images/icarus.png" alt="Icarus" width="47%">
 </div>
+<br>
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="images/heracles.png" alt="Artemis" width="49.7%">
-  <img src="images/thanatos.png" alt="Icarus" width="49.7%">
+  <img src="images/heracles.png" alt="Artemis" width="47%">
+  <img src="images/thanatos.png" alt="Icarus" width="47%">
 </div>
+<br>
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="images/nemesis.png" alt="Artemis" width="49.7%">
-  <img src="images/artemis2.png" alt="nemesis" width="49.7%">
+  <img src="images/nemesis.png" alt="Artemis" width="47%">
+  <img src="images/artemis2.png" alt="nemesis" width="47%">
 </div>
 
 ## Installation

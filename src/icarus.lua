@@ -15,7 +15,8 @@ local icarusEncounters = {
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "erebus"}
                 }
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
     },
 
@@ -35,7 +36,8 @@ local icarusEncounters = {
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "oceanus"}
                 }
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
     },
 
@@ -96,6 +98,7 @@ local icarusEncounters = {
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive" },
             },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
     },
 
@@ -115,7 +118,8 @@ local icarusEncounters = {
                 {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "tartarus"}
                 }
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
     },
 
@@ -149,7 +153,8 @@ local icarusEncounters = {
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         },
     },
 
@@ -183,7 +188,8 @@ local icarusEncounters = {
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
-            }
+            },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
         }
     }
 }
