@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 namespace = "zerp"
 name = "Extended_NPC_Encounters"
 versionNumber = "0.2.1"
-description = "Adds more NPC encounters to regions that they cannot normally appear in, like Icarus in Underworld or Artemis in Olympus."
+description = "Adds more NPC encounters to regions that they cannot normally appear in, like Icarus in Underworld or Artemis in Olympus. Also works with Zagreus' Journey."
 websiteUrl = "https://github.com/adi1998/ExtendedNPCEncounters"
 containsNsfwContent = false
 

@@ -1,6 +1,6 @@
 ## Extended NPC Encounters
 
-Adds NPC encounters to regions that they cannot normally appear in. Also allows Thanatos to appear in some H2 biomes if Zagreus' Journey is installed.
+Adds NPC encounters to regions that they cannot normally appear in. Also allows Thanatos to appear in Hades 2 biomes and Hades 2 NPCs in Hades biomes if Zagreus' Journey is installed.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
   <img src="images/artemis.png" alt="Artemis" width="47%">
