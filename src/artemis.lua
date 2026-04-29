@@ -81,6 +81,9 @@ local artemisEncounters = {
                 {
                     PathTrue = {_PLUGIN.guid, "config", "artemis", "thessaly"}
                 },
+                {
+                    PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NExtRoomShipEncounters"},
+                },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "SurfaceRouteLockedByTyphonKill" },
             },

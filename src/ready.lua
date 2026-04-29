@@ -315,6 +315,39 @@ modutil.mod.Path.Wrap("RecordEncounter", function (base, run, encounter)
 	if game.Contains(biomeHFieldEncounters, encounter.Name) then
 		game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "NextRoomCageFieldEncounters"] = true
 	end
+
+	local biomeOShipEncounters = {
+		"ArtemisCombatO",
+		"NemesisCombatO",
+	}
+
+	if game.Contains(biomeOShipEncounters, encounter.Name) then
+		game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "NextRoomShipEncounters"] = true
+	end
+
+end)
+
+table.insert(mod.PostSetupRunDataFuncs, function ()
+    table.insert(game.EncounterData.NemesisCombatH.GameStateRequirements, {
+            PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
+    })
+end)
+
+table.insert(mod.PostSetupRunDataFuncs, function ()
+	local baseOEncounters = {
+		"HeraclesCombatO",
+		"HeraclesCombatO2",
+		"IcarusCombatO",
+		"IcarusCombatO2",
+		"IcarusCombatIntro",
+	}
+	for _, encounterName in ipairs(baseOEncounters) do
+		if game.EncounterData[encounterName] then
+			table.insert(game.EncounterData[encounterName].GameStateRequirements, {
+				PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomShipEncounters"},
+			})
+		end
+	end
 end)
 
 table.insert(mod.PreSetupRunDataFuncs, function ()

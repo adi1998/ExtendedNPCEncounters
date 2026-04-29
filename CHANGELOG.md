@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Nemesis/Heracles and Icarus/Artemis being able to spwan in the same room
+
 ## [0.3.1] - 2026-04-29
 
 - Fix crash when exiting from a side room in Ephyra to a finished Nemesis room

@@ -102,6 +102,9 @@ local nemesisEncounters = {
                 {
                     PathTrue = {_PLUGIN.guid, "config", "nemesis", "thessaly"}
                 },
+                {
+                    PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomShipEncounters"},
+                },
                 NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive", "HecateMissing", },
             },
@@ -300,12 +303,6 @@ table.insert(game.VariantSetData.NPC_Nemesis_01.NemesisCombat.PostTextLineEvents
         },
     },
 })
-
-table.insert(mod.PostSetupRunDataFuncs, function ()
-    table.insert(game.EncounterData.NemesisCombatH.GameStateRequirements, {
-            PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
-    })
-end)
 
 modutil.mod.Path.Wrap("NemesisTakeRoomExit", function (base, ...)
     if not game.SessionMapState.Nemesis then
