@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Artemis Thessaly GameStateRequirements
+
 ## [0.3.2] - 2026-04-29
 
 - Fix Nemesis/Heracles and Icarus/Artemis being able to spawn in the same room
