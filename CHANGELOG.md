@@ -2,7 +2,8 @@
 
 ## [Unreleased]
 
-- Fix Nemesis/Heracles and Icarus/Artemis being able to spwan in the same room
+- Fix Nemesis/Heracles and Icarus/Artemis being able to spawn in the same room
+- Increase cooldown between two field NPC encounters from 6 to 8 rooms
 
 ## [0.3.1] - 2026-04-29
 

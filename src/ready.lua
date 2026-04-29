@@ -482,3 +482,5 @@ if mod.IsZag then
 		end
 	end)
 end
+
+game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].SumPrevRooms = 8
