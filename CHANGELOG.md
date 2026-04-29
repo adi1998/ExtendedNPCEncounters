@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
--Fix crash when exiting from a side room in Ephyra to a finished Nemesis room
+- Fix crash when exiting from a side room in Ephyra to a finished Nemesis room
 
 ## [0.3.0] - 2026-04-23
 
