@@ -306,3 +306,10 @@ table.insert(mod.PostSetupRunDataFuncs, function ()
             PathFalse = { "CurrentRun", "CurrentRoom", _PLUGIN.guid .. "NextRoomCageFieldEncounters"},
     })
 end)
+
+modutil.mod.Path.Wrap("NemesisTakeRoomExit", function (base, ...)
+    if not game.SessionMapState.Nemesis then
+        return
+    end
+    return base(...)
+end)

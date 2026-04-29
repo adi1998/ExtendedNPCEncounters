@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+-Fix crash when exiting from a side room in Ephyra to a finished Nemesis room
+
 ## [0.3.0] - 2026-04-23
 
 - Add Hades 2 NPC encounters to Zag's journey
