@@ -319,6 +319,11 @@ modutil.mod.Path.Wrap("RecordEncounter", function (base, run, encounter)
 	local biomeOShipEncounters = {
 		"ArtemisCombatO",
 		"NemesisCombatO",
+		"HeraclesCombatO",
+		"HeraclesCombatO2",
+		"IcarusCombatO",
+		"IcarusCombatO2",
+		"IcarusCombatIntro",
 	}
 
 	if game.Contains(biomeOShipEncounters, encounter.Name) then
