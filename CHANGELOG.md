@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-05-02
+
 - Actually fix Nemesis/Heracles and Icarus/Artemis being able to spawn in the same ship room
 
 ## [0.3.3] - 2026-04-29
@@ -33,7 +35,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.3...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...HEAD
+[0.3.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.3...0.3.4
 [0.3.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.2...0.3.3
 [0.3.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.1...0.3.2
 [0.3.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.0...0.3.1
