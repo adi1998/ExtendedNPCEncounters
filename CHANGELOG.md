@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-04
+
 - Add config to only allow extra encounters in Dream Dives
 
 ## [0.3.4] - 2026-05-02
@@ -37,7 +39,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...0.4.0
 [0.3.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.3...0.3.4
 [0.3.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.2...0.3.3
 [0.3.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.1...0.3.2
