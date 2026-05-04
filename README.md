@@ -35,7 +35,7 @@ Mod can be configured through the r2modman config editor. Requires the game to b
 
 <br>
 
-Each new encounter added can disabled/enabled as you see fit. Each NPC can have their chance of showing up in non-vanilla regions configured by setting the `weight` value.
+Each new encounter added can disabled/enabled as you see fit. Each NPC can have their chance of showing up in non-vanilla regions configured by setting the `weight` value. Can use `dream_dive_only` to only allow these encounters in Dream Dives.
 
 <div style="display: flex;">
     <img src="images/config_edit.png" alt="Config Edit" width="50%">

@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add config to only allow extra encounters in Dream Dives
+
 ## [0.3.4] - 2026-05-02
 
 - Actually fix Nemesis/Heracles and Icarus/Artemis being able to spawn in the same ship room

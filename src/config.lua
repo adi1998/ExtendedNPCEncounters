@@ -65,6 +65,7 @@ local config = {
   };
 
   zags_journey_integration = true;
+  dream_dive_only = false;
 }
 
 local configDesc = {
@@ -135,6 +136,7 @@ local configDesc = {
   };
 
   zags_journey_integration = "Enable/Disable Zagreus' Journey integration";
+  dream_dive_only = "Allow new encounters in Dream Dives only";
 }
 
 return config, configDesc

@@ -489,3 +489,19 @@ if mod.IsZag then
 end
 
 game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].SumPrevRooms = 8
+
+function mod.CheckDreamDiveConfig()
+	return (config.dream_dive_only and game.CurrentRun.IsDreamRun) or (not config.dream_dive_only)
+end
+
+table.insert(mod.PostSetupRunDataFuncs, function ()
+	for _, encounterName in ipairs(mod.NewNPCEncounters) do
+		if game.EncounterData[encounterName] then
+			table.insert(game.EncounterData[encounterName].GameStateRequirements, {
+				FunctionName = _PLUGIN.guid .. "." .. "CheckDreamDiveConfig",
+			})
+		else
+			print("trying to patch missing encounter", encounterName, "for config.dream_dive_only")
+		end
+	end
+end)
