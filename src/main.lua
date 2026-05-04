@@ -66,8 +66,10 @@ local function on_ready()
     if config.nemesis.enabled then
         import 'nemesis.lua'
     end
-
-    if mod.IsZag then
+    if config.athena.enabled then
+        import 'athena.lua'
+    end
+    if mod.IsZag and config.thanatos.enabled then
         import 'thanatos.lua'
     end
 
