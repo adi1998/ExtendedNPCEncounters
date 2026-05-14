@@ -25,7 +25,7 @@ local thanatosEncounters = {
                     FunctionName = "GenericPresentation",
                     Args =
                     {
-                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField", "Modsnikkelmhadesbiomeszagreushome" },
                         LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
                     },
                 },
@@ -84,7 +84,7 @@ local thanatosEncounters = {
                     FunctionName = "GenericPresentation",
                     Args =
                     {
-                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField", "Modsnikkelmhadesbiomeszagreushome" },
                         LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
                     },
                 },
@@ -145,7 +145,7 @@ local thanatosEncounters = {
                     FunctionName = "GenericPresentation",
                     Args =
                     {
-                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField", "Modsnikkelmhadesbiomeszagreushome" },
                         LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
                     },
                 },
@@ -203,7 +203,7 @@ local thanatosEncounters = {
                     FunctionName = "GenericPresentation",
                     Args =
                     {
-                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField", "Modsnikkelmhadesbiomeszagreushome" },
                         LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
                     },
                 },
@@ -265,7 +265,7 @@ local thanatosEncounters = {
                     FunctionName = "GenericPresentation",
                     Args =
                     {
-                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField" },
+                        LoadVoiceBanks = { "Thanatos", "ThanatosField", "ZagreusField", "Modsnikkelmhadesbiomeszagreushome" },
                         LoadPackages = { "ModsNikkelMHadesBiomesFxOriginal", },
                     },
                 },

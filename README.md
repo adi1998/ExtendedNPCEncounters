@@ -8,13 +8,13 @@ Adds NPC encounters to regions that they cannot normally appear in. Also allows 
 </div>
 <br>
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="images/heracles.png" alt="Artemis" width="47%">
-  <img src="images/thanatos.png" alt="Icarus" width="47%">
+  <img src="images/heracles.png" alt="Heracles" width="47%">
+  <img src="images/thanatos.png" alt="Thanatos" width="47%">
 </div>
 <br>
 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-  <img src="images/nemesis.png" alt="Artemis" width="47%">
-  <img src="images/artemis2.png" alt="nemesis" width="47%">
+  <img src="images/nemesis.png" alt="Nemesis" width="47%">
+  <img src="images/athena.png" alt="Athena" width="47%">
 </div>
 
 ## Installation

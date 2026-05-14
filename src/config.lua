@@ -72,11 +72,11 @@ local config = {
     tartarus = true;
 
     ephyra = true;
-    thessaly = true;
+    -- thessaly = true;
 
-    tartarus_nightmare = true;
-    asphodel = true;
-    elysium = true;
+    -- tartarus_nightmare = true;
+    -- asphodel = true;
+    -- elysium = true;
   };
   zags_journey_integration = true;
   dream_dive_only = false;
@@ -146,11 +146,11 @@ local configDesc = {
     tartarus = "Allow Athena in Tartarus";
 
     ephyra = "Allow Athena in Ephyra";
-    thessaly = "Allow Athena in Thessaly";
+    -- thessaly = "Allow Athena in Thessaly";
 
-    tartarus_nightmare = "Allow Athena in Tartarus(Nightmare)";
-    asphodel = "Allow Athena in Asphodel";
-    elysium = "Allow Athena in Elysium";
+    -- tartarus_nightmare = "Allow Athena in Tartarus(Nightmare)";
+    -- asphodel = "Allow Athena in Asphodel";
+    -- elysium = "Allow Athena in Elysium";
   };
   thanatos = {
     enabled = "Enable/disable Extended Thanatos Encounters";
