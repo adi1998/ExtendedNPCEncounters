@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Add Athena encounter for Erebus, Oceanus, Tartarus and Ephyra
+- Fixed Zagreus voice bank not being loaded in H2 biomes
+
 ## [0.4.0] - 2026-05-04
 
 - Add config to only allow extra encounters in Dream Dives
