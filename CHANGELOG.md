@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-05-14
+
 - Add Athena encounter for Erebus, Oceanus, Tartarus and Ephyra
 - Fixed Zagreus voice bank not being loaded in H2 biomes
 
@@ -42,7 +44,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...HEAD
+[0.5.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...0.4.0
 [0.3.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.3...0.3.4
 [0.3.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.2...0.3.3
