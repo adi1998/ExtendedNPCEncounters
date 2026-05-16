@@ -35,6 +35,7 @@ local athenaEnconters  = {
 
                 "SiegeVine_Elite",
             },
+            DelayedStart = false,
             GameStateRequirements =
             {
                 {
@@ -74,6 +75,7 @@ local athenaEnconters  = {
             MaxEliteTypes = 4,
             BaseDifficulty = 350,
             DepthDifficultyRamp = 100,
+            DelayedStart = false,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -87,6 +89,7 @@ local athenaEnconters  = {
             InheritFrom = {"BaseAthenaCombat", "GeneratedI"},
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
+            DelayedStart = false,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -106,6 +109,7 @@ local athenaEnconters  = {
 		    ActiveEnemyCapMax = 10,
             MinWaves = 3,
             MaxWaves = 3,
+            DelayedStart = false,
             EnemySet = {
                 "Carrion_Elite",
                 "Mudman",
@@ -135,6 +139,7 @@ local zagAthenaEncounters = {
             InheritFrom = {"BaseAthenaCombat", "GeneratedTartarus"},
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
+            DelayedStart = false,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -148,6 +153,7 @@ local zagAthenaEncounters = {
             InheritFrom = {"BaseAthenaCombat", "GeneratedAsphodel"},
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
+            DelayedStart = false,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -161,6 +167,7 @@ local zagAthenaEncounters = {
             InheritFrom = {"BaseAthenaCombat", "GeneratedElysium"},
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
+            DelayedStart = false,
             GameStateRequirements = {
                 Append = true,
                 {

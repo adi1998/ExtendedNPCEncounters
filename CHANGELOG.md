@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix encounter start effects like the Unseen arcana not triggering for custom Athena encounters
+
 ## [0.5.0] - 2026-05-14
 
 - Add Athena encounter for Erebus, Oceanus, Tartarus and Ephyra
