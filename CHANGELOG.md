@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-05-16
+
 - Fix encounter start effects like the Unseen arcana not triggering for custom Athena encounters
 
 ## [0.5.0] - 2026-05-14
@@ -46,7 +48,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...HEAD
+[0.5.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...0.4.0
 [0.3.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.3...0.3.4
