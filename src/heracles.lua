@@ -116,6 +116,7 @@ function mod.HeraclesSpawnPresentation( heracles, dummyTarget, currentEncounter 
 
 	-- after arrival
 
+	killWaitUntilThreads( "ReattachCameraOnInput" )
 	PanCamera({ Ids = heracles.ObjectId, Duration = 1.5, EaseIn = 0.05, EaseOut = 0.03 })
 	PlaySound({ Name = "/Leftovers/World Sounds/MapZoomSlow" })
 	PlaySound({ Name = "/Leftovers/SFX/GoalScoredNEW" })
@@ -135,13 +136,14 @@ function mod.HeraclesSpawnPresentation( heracles, dummyTarget, currentEncounter 
 
 	wait( 0.5, RoomThreadName )
 
-	ProcessTextLines( heracles, heracles.BossIntroTextLineSets )
-
 	RemoveInputBlock({ Name = "HeraclesSpawnPresentation" })
 	SetPlayerVulnerable( "HeraclesSpawnPresentation" )
 
-	local textLines = GetRandomEligibleTextLines( heracles, heracles.BossIntroTextLineSets, GetNarrativeDataValue( heracles, "BossIntroTextLinePriorities" ) )
-	PlayTextLines( heracles, textLines )
+	if not CurrentRun.IsDreamRun then
+		ProcessTextLines( heracles, heracles.BossIntroTextLineSets )
+		local textLines = GetRandomEligibleTextLines( heracles, heracles.BossIntroTextLineSets, GetNarrativeDataValue( heracles, "BossIntroTextLinePriorities" ) )
+		PlayTextLines( heracles, textLines )
+	end
 
 	SetSoundCueValue({ Names = { "Keys" }, Id = AudioState.SecretMusicId, Value = 1 })
 	SetSoundCueValue({ Names = { "Drums" }, Id = AudioState.SecretMusicId, Value = 1 })
@@ -189,10 +191,12 @@ function mod.HeraclesPostCombat( enemy )
 		ApplyForce({ Id = consumableId, Speed = 350, Angle = GetAngle({ Id = enemy.ObjectId }), SelfApplied = true })
 	end
 
-	CheckAvailableTextLines( enemy )
-	SetAvailableUseText( enemy )
 	RemoveInteractBlock( enemy, "HeraclesPostCombat" )
 
+	if not CurrentRun.IsDreamRun then
+		CheckAvailableTextLines( enemy )
+	end
+	SetAvailableUseText( enemy )
 	if enemy.NextInteractLines == nil then
 		if CanReceiveGift( enemy ) then
 			MapState.RoomRequiredObjects[enemy.ObjectId] = nil
@@ -353,7 +357,7 @@ weight = mod.clampweight(weight)
 
 local newHeraclesEncounters = {}
 
-mod.AddNewEncounters(heraclesEncounters, weight, {
+mod.AddNewEncounters(heraclesEncounters, 100, {
     game.NamedRequirementsData.NoRecentHeraclesEncounter[2].TableValuesToCount,
 	game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
 	newHeraclesEncounters
