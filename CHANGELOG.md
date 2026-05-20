@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Hercles having dialogue enabled in Fields during Dream Dives
+
 ## [0.5.1] - 2026-05-16
 
 - Fix encounter start effects like the Unseen arcana not triggering for custom Athena encounters
