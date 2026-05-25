@@ -357,7 +357,7 @@ weight = mod.clampweight(weight)
 
 local newHeraclesEncounters = {}
 
-mod.AddNewEncounters(heraclesEncounters, 100, {
+mod.AddNewEncounters(heraclesEncounters, weight, {
     game.NamedRequirementsData.NoRecentHeraclesEncounter[2].TableValuesToCount,
 	game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
 	newHeraclesEncounters
