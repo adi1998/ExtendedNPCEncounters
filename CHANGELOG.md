@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-05-25
+
 - Fix Hercles having dialogue enabled in Fields during Dream Dives
 - Fix Artemis missing her Visage form texture during Dream Dives
 
@@ -51,7 +53,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...HEAD
+[0.5.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.3.4...0.4.0
