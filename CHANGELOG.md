@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Fix Hercles having dialogue enabled in Fields during Dream Dives
+- Fix Artemis missing her Visage form texture during Dream Dives
 
 ## [0.5.1] - 2026-05-16
 
