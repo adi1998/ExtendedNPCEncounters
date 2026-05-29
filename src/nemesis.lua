@@ -51,6 +51,9 @@ local nemesisEncounters = {
                     Value = 5,
                 },
                 {
+                    PathFalse = { "CurrentRun", "IsDreamRun" },
+                },
+                {
                     PathTrue = {_PLUGIN.guid, "config", "nemesis", "ephyra"}
                 },
                 NamedRequirements = { "NoRecentNemesisEncounter", "NoRecentFieldNPCEncounter" },
@@ -164,6 +167,9 @@ local zagNemesisEncounters = {
                     Path = { "CurrentRun", "BiomeDepthCache" },
                     Comparison = ">=",
                     Value = 4,
+                },
+                {
+                    PathFalse = { "CurrentRun", "IsDreamRun" },
                 },
                 {
                     PathTrue = {_PLUGIN.guid, "config", "nemesis", "tartarus_nightmare"}

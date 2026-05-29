@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Block Dream sex
+
 ## [0.5.2] - 2026-05-25
 
 - Fix Hercles having dialogue enabled in Fields during Dream Dives
