@@ -10,6 +10,6 @@ for _, encounterName in ipairs(mod.NewNPCEncounters) do
             },
         })
     else
-        print("trying to missing encounter", encounterName, "for nightmare_fear_compat")
+        print("trying to patch missing encounter", encounterName, "for nightmare_fear_compat")
     end
 end

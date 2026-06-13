@@ -74,9 +74,9 @@ local config = {
     ephyra = true;
     -- thessaly = true;
 
-    -- tartarus_nightmare = true;
-    -- asphodel = true;
-    -- elysium = true;
+    tartarus_nightmare = true;
+    asphodel = true;
+    elysium = true;
   };
   zags_journey_integration = true;
   dream_dive_only = false;

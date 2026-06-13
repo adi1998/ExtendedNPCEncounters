@@ -43,4 +43,4 @@ Each new encounter added can disabled/enabled as you see fit. Each NPC can have 
 
 ## Issues and feedback
 
-Report any issues or feedback [here](https://github.com/adi1998/ExtendedNPCEncounters/issues) or on the [Hades Modding Discord](https://discord.gg/bKvJTAJj)
+Report any issues or feedback [here](https://github.com/adi1998/ExtendedNPCEncounters/issues) or on the [Hades Modding Discord](https://discord.gg/KuMbyrN)

@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 
-- Block Dream sex
+- Add Athena encounters to Zagreus' Journey
+- Adjust some Icarus encounters' difficulty
+- Block dream sex
 
 ## [0.5.2] - 2026-05-25
 

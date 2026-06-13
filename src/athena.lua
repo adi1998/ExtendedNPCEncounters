@@ -140,6 +140,16 @@ local zagAthenaEncounters = {
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
             DelayedStart = false,
+            BaseDifficulty = 250,
+		    DepthDifficultyRamp = 40,
+            MinWaves = 3,
+		    MaxWaves = 3,
+            MinTypes = 3,
+            MaxTypes = 5,
+            MaxTypesCap = 7,
+            ActiveEnemyCapBase = 8,
+		    ActiveEnemyCapMax = 8,
+            MaxEliteTypes = 4,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -154,6 +164,10 @@ local zagAthenaEncounters = {
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
             DelayedStart = false,
+            BaseDifficulty = 340,
+            DepthDifficultyRamp = 50,
+            MaxTypes = 5,
+            MaxTypesCap = 7,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -168,6 +182,13 @@ local zagAthenaEncounters = {
             CanEncounterSkip = false,
 		    PauseDurationAfterPriorityGroup = 0.0,
             DelayedStart = false,
+            BaseDifficulty = 800,
+            DepthDifficultyRamp = 180,
+            MaxTypes = 5,
+            MaxTypesCap = 7,
+            MaxEliteTypes = 4,
+            ActiveEnemyCapBase = 7,
+		    ActiveEnemyCapMax = 7,
             GameStateRequirements = {
                 Append = true,
                 {
@@ -178,9 +199,9 @@ local zagAthenaEncounters = {
     },
 }
 
--- if mod.IsZag then
---     game.OverwriteTableKeys(athenaEnconters, zagAthenaEncounters)
--- end
+if mod.IsZag then
+    game.OverwriteTableKeys(athenaEnconters, zagAthenaEncounters)
+end
 
 local weight = config.athena.weight
 weight = mod.clampweight(weight)
