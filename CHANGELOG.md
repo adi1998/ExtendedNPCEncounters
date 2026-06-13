@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-06-13
+
 - Add Athena encounters to Zagreus' Journey
 - Adjust some Icarus encounters' difficulty
 - Block dream sex
@@ -57,7 +59,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.4.0...0.5.0
