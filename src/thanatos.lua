@@ -310,6 +310,6 @@ mod.AddNewEncounters(thanatosEncounters, weight, {
 function mod.LoadThanatosMusic()
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
         "Content\\Audio\\Desktop\\" .. "ModsNikkelMHadesBiomesMusicModded" .. ".bank"))
-
-    rom.audio.load_bank(rom.path.combine(rom.paths.Content(), "Audio\\Desktop\\" .. "SoundsModsNikkelMHadesBiomes" .. ".bank"))
+    rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
+        "Content\\Audio\\Desktop\\" .. "SoundsModsNikkelMHadesBiomes" .. ".bank"))
 end
