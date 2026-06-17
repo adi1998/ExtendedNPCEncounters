@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix incorrect audio bank loading
+
 ## [0.6.0] - 2026-06-13
 
 - Add Athena encounters to Zagreus' Journey
