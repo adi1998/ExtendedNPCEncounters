@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-06-17
+
 - Fix incorrect audio bank loading
 
 ## [0.6.0] - 2026-06-13
@@ -61,7 +63,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.0...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.1...HEAD
+[0.6.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.0...0.5.1
