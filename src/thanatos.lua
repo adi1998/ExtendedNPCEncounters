@@ -3,7 +3,6 @@ local thanatosEncounters = {
         ThanatosCombatF =
         {
             InheritFrom = { "BaseThanatos", "GeneratedF" },
-            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
             BaseDifficulty = 400,
             MinTypes = 4,
             MaxTypes = 5,
@@ -50,6 +49,10 @@ local thanatosEncounters = {
                     Value = 4,
                 },
                 {
+                    Path = { "GameState", "EncountersCompletedCache" },
+				    HasAny = { "ThanatosElysium", "ThanatosElysiumIntro" },
+                },
+                {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "erebus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -62,7 +65,6 @@ local thanatosEncounters = {
         ThanatosCombatG =
         {
             InheritFrom = { "BaseThanatos", "GeneratedG" },
-            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
             BaseDifficulty = 500,
             MinTypes = 4,
             MaxTypes = 5,
@@ -109,6 +111,10 @@ local thanatosEncounters = {
                     Value = 3,
                 },
                 {
+                    Path = { "GameState", "EncountersCompletedCache" },
+				    HasAny = { "ThanatosElysium", "ThanatosElysiumIntro" },
+                },
+                {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "oceanus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -121,7 +127,6 @@ local thanatosEncounters = {
         ThanatosCombatI =
         {
             InheritFrom = { "BaseThanatos", "GeneratedI" },
-            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
             BaseDifficulty = 700,
             MinTypes = 4,
             MaxTypes = 5,
@@ -170,6 +175,10 @@ local thanatosEncounters = {
                     Value = 3,
                 },
                 {
+                    Path = { "GameState", "EncountersCompletedCache" },
+				    HasAny = { "ThanatosElysium", "ThanatosElysiumIntro" },
+                },
+                {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "tartarus" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -181,7 +190,6 @@ local thanatosEncounters = {
     N = {
         ThanatosCombatN = {
             InheritFrom = { "BaseThanatos", "GeneratedN" },
-            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
             BaseDifficulty = 400,
             MinTypes = 4,
             MaxTypes = 5,
@@ -228,6 +236,10 @@ local thanatosEncounters = {
                     Value = 4,
                 },
                 {
+                    Path = { "GameState", "EncountersCompletedCache" },
+				    HasAny = { "ThanatosElysium", "ThanatosElysiumIntro" },
+                },
+                {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "ephyra" }
                 },
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
@@ -240,7 +252,6 @@ local thanatosEncounters = {
         ThanatosCombatP =
         {
             InheritFrom = { "BaseThanatos", "GeneratedP" },
-            RequireAnyEncounterCompleted = { "ThanatosElysium", "ThanatosElysiumIntro", },
             BaseDifficulty = 700,
             MinTypes = 4,
             MaxTypes = 5,
@@ -288,6 +299,10 @@ local thanatosEncounters = {
                     Path = { "CurrentRun", "BiomeDepthCache" },
                     Comparison = ">=",
                     Value = 3,
+                },
+                {
+                    Path = { "GameState", "EncountersCompletedCache" },
+				    HasAny = { "ThanatosElysium", "ThanatosElysiumIntro" },
                 },
                 {
                     PathTrue = { _PLUGIN.guid, "config", "thanatos", "olympus" }

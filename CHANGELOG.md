@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix Thanatos being able to show up in H2 biomes before encountering him in Elysium
+
 ## [0.6.1] - 2026-06-17
 
 - Fix incorrect audio bank loading
