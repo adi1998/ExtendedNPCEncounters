@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-06-20
+
 - Fix Thanatos being able to show up in H2 biomes before encountering him in Elysium
 
 ## [0.6.1] - 2026-06-17
@@ -65,7 +67,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.1...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.2...HEAD
+[0.6.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.1...0.6.2
 [0.6.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.1...0.5.2
