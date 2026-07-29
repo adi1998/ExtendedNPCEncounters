@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Update condition which checks for a valid ZJ installation
+
 ## [0.6.2] - 2026-06-20
 
 - Fix Thanatos being able to show up in H2 biomes before encountering him in Elysium
