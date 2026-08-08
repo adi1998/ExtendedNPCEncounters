@@ -176,6 +176,7 @@ local zagAthenaEncounters = {
             }
         }
     },
+    -- TODO: remove once implemented in ZJ
     Elysium = {
         AthenaCombatElysium = {
             InheritFrom = {"BaseAthenaCombat", "GeneratedElysium"},

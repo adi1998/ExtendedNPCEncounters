@@ -121,6 +121,7 @@ local artemisEncounters = {
 }
 
 local zagArtemisEncounters = {
+    -- TODO: remove once implemented in ZJ
     Tartarus = {
         ArtemisCombatTartarus = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
@@ -135,6 +136,7 @@ local zagArtemisEncounters = {
 			}
         }
     },
+    -- TODO: remove once implented in ZJ
     Elysium = {
         ArtemisCombatElysium = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedElysium" },
