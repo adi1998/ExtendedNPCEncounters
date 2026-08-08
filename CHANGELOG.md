@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.3] - 2026-07-29
+
 - Update condition which checks for a valid ZJ installation
 
 ## [0.6.2] - 2026-06-20
@@ -69,7 +71,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.2...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.3...HEAD
+[0.6.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.2...0.6.3
 [0.6.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.1...0.6.2
 [0.6.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.5.2...0.6.0
