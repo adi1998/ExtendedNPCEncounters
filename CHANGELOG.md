@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add optional dependency on ZJ
+
 ## [0.6.3] - 2026-07-29
 
 - Update condition which checks for a valid ZJ installation
