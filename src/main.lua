@@ -37,19 +37,20 @@ chalk = mods["SGG_Modding-Chalk"]
 reload = mods['SGG_Modding-ReLoad']
 
 ---@module 'config'
-config = chalk.auto 'config.lua'
+config = rom.mod_settings.load 'config.lua'
 -- ^ this updates our `.cfg` file in the config folder!
 public.config = config -- so other mods can access our config
+
+ZJ_guid = "NikkelM-Zagreus_Journey"
 
 local function on_ready()
     -- what to do when we are ready, but not re-do on reload.
     if config.enabled == false then return end
     mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     mod.config = config
-    mod.IsZag = rom.mods["NikkelM-Zagreus_Journey"] and
-                rom.mods["NikkelM-Zagreus_Journey"].config and
-                rom.mods["NikkelM-Zagreus_Journey"].config.enabled and
-                rom.mods["NikkelM-Zagreus_Journey"].IsValidInstallation and
+    zj = rom.mods[ZJ_guid]
+    mod.IsZag = zj and zj.IsModEnabledAndInstallationValid and
+                zj.IsModEnabledAndInstallationValid() and
                 config.zags_journey_integration
 
     mod.PostSetupRunDataFuncs = {}
