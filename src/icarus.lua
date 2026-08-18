@@ -284,6 +284,7 @@ function mod.IcarusPostCombat( enemy )
 	Stop({ Id = enemy.ObjectId })
 	wait(0.05, enemy.AIThreadName)
 	Teleport({ Id = enemy.ObjectId, DestinationId = moveToId })
+    SetAlpha({ Id = enemy.ObjectId, Fraction = 1.0, Duration = 0.08 })
 	wait(0.05, enemy.AIThreadName)
 
 	--[[ check for first presentation
