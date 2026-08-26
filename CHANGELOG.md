@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Potential fix for Icarus sometimes being invisible.
+- Fix Heracles Fields encounters crashing in some cases.
+
 ## [0.6.4] - 2026-08-09
 
 - Add optional dependency on ZJ

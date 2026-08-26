@@ -182,7 +182,13 @@ function mod.HeraclesPostCombat( enemy )
 	wait(1.3)
 
 	HeraclesObjectiveResultPresentation( enemy )
-	if game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"].PlayerMoneyObjective > 0 then
+	if game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"] then
+		print("CurrentCageEncounter", game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"].Name)
+		print("CurrentCageEncounter PlayerMoneyObjective", game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"].PlayerMoneyObjective)
+	else
+		rom.log.warning("CurrentCageEncounter nil, about to crash")
+	end
+	if (game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"].PlayerMoneyObjective or 0) > 0 then
 		local consumableId = SpawnObstacle({ Name = "RoomMoneyDrop", DestinationId = enemy.ObjectId, Group = "Standing" })
 		local reward = CreateConsumableItem( consumableId, "RoomMoneyDrop", 0 )
 		reward.DropMoney = game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"].PlayerMoneyObjective

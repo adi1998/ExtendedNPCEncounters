@@ -297,7 +297,7 @@ modutil.mod.Path.Wrap("SetupUnit", function (base, unit, currentRun, args)
 	end
 end)
 
-modutil.mod.Path.Wrap("StartFieldsEncounter", function (base, rewardCage, args)
+modutil.mod.Path.Wrap("FieldsEncounterActivatedPresentation", function (base, rewardCage, args)
     game.CurrentRun.CurrentRoom[_PLUGIN.guid .. "CurrentCageEncounter"] = rewardCage.Encounter
     base(rewardCage, args)
 end)
