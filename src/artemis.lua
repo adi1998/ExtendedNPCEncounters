@@ -182,11 +182,7 @@ function mod.HandleArtemisSpawn(eventSource, args)
 	local currentEncounter = eventSource
 
 	local newUnit = game.DeepCopyTable( game.EnemyData.NPC_Artemis_Field_01 )
-	local spawnPointId = game.GetRandomValue( game.GetIds({ Name = "ArtemisSpawnPoints" }) or game.GetIdsByType({ Name = "CameraClamp" }) )
-	if game.RoomData[currentRoom.Name].ArtemisUseHeroStart then
-		spawnPointId = game.GetRandomValue( game.GetIdsByType({ Name = "HeroStart" }) )
-	end
-	spawnPointId = spawnPointId or currentRun.Hero.ObjectId
+	local spawnPointId = currentRun.Hero.ObjectId
 	newUnit.ObjectId = game.SpawnUnit({ Name = "NPC_Artemis_Field_01", Group = "Standing", DestinationId = spawnPointId })
 
 	game.SetAlpha({ Id = newUnit.ObjectId, Fraction = 0, Duration = 0 })

@@ -4,7 +4,7 @@ function mod.HandleHeraclesSpawn( eventSource )
 	local currentEncounter = eventSource
 
 	local newUnit = game.DeepCopyTable( game.EnemyData.NPC_Heracles_01 )
-	local dummyEncounter = { SpawnNearId = currentRun.Hero.ObjectId, SpawnRadius = 900, }
+	local dummyEncounter = { SpawnNearId = currentRun.Hero.ObjectId, SpawnRadius = 600, }
 	local spawnPointId = SelectSpawnPoint( currentRoom, newUnit, dummyEncounter, { RequireMinEndPointDistance = 400 } )
 	spawnPointId = spawnPointId or currentRun.Hero.ObjectId
 	newUnit.ObjectId = game.SpawnUnit({ Name = "NPC_Heracles_01", Group = "Standing", DestinationId = spawnPointId })
@@ -162,10 +162,10 @@ function mod.HeraclesPostCombat( enemy )
 	enemy.PostCombatTravel = true
 	AddTimerBlock( CurrentRun, "HeraclesPostCombat" )
 	-- print("HeraclesPostCombat")
-	local moveToId = SelectLootSpawnPoint(CurrentRun.CurrentRoom) or CurrentRun.Hero.ObjectId
+	local moveToId = CurrentRun.Hero.ObjectId
 	local distanceToTarget = GetDistance({ Id = enemy.ObjectId, DestinationId = moveToId })
 
-	Move({ Id = enemy.ObjectId, DestinationId = moveToId, SuccessDistance = 40 })
+	Move({ Id = enemy.ObjectId, DestinationId = moveToId, SuccessDistance = 60 })
 	enemy.AINotifyName = "WithinDistance_"..enemy.Name.."_"..enemy.ObjectId
 	NotifyWithinDistance({ Id = enemy.ObjectId, DestinationId = moveToId, Distance = 100, Notify = enemy.AINotifyName, Timeout = 10.0 })
 	waitUntil( enemy.AINotifyName, enemy.AIThreadName )

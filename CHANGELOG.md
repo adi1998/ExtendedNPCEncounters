@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Adjust Fields encounters to always spawn NPCs near Melinoe.
+
 ## [0.6.5] - 2026-08-26
 
 - Potential fix for Icarus sometimes being invisible.
