@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.5] - 2026-08-26
+
 - Potential fix for Icarus sometimes being invisible.
 - Fix Heracles Fields encounters crashing in some cases.
 
@@ -78,7 +80,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.4...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.5...HEAD
+[0.6.5]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.4...0.6.5
 [0.6.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.3...0.6.4
 [0.6.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.2...0.6.3
 [0.6.2]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.1...0.6.2
