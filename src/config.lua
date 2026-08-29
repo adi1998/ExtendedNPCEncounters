@@ -1,4 +1,12 @@
-local config = {
+local function checkZagConfigDisabled()
+  return not (
+    zj and zj.IsModEnabledAndInstallationValid and
+    zj.IsModEnabledAndInstallationValid() and
+    config.zags_journey_integration
+  )
+end
+
+local config_default = {
   enabled = true;
   icarus = {
     enabled = true;
@@ -83,78 +91,283 @@ local config = {
 }
 
 local configDesc = {
-  enabled = "Enable/disable Extended NPC Encounters";
+  enabled = {
+    order = 1,
+    description = "Enable/disable Extended NPC Encounters";
+    editableContext = "mainMenu"
+  },
   icarus = {
-    enabled = "Enable/disable Extended Icarus Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Icarus Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      min = 1;
+      max = 20;
+      step = 1;
+      order = 2,
+      editableContext = "mainMenu",
+    },
 
-    erebus = "Allow Icarus in Erebus";
-    oceanus = "Allow Icarus in Oceanus";
-    fields = "Allow Icarus in Fields";
-    tartarus = "Allow Icarus in Tartarus";
+    erebus = {
+      description = "Allow Icarus in Erebus";
+      order = 3
+    },
+    oceanus = {
+      description = "Allow Icarus in Oceanus";
+      order = 4
+    },
+    fields = {
+      description = "Allow Icarus in Fields";
+      order = 5
+    },
+    tartarus = {
+      description = "Allow Icarus in Tartarus";
+      order = 6
+    },
 
-    ephyra = "Allow Icarus in Ephyra";
-    ephyra_sideroom = "Allow Icarus in Ephyra side rooms";
+    ephyra = {
+      description = "Allow Icarus in Ephyra";
+      order = 7
+    },
+    ephyra_sideroom = {
+      description = "Allow Icarus in Ephyra side rooms";
+      order = 8
+    },
 
-    asphodel = "Allow Icarus in Asphodel";
-    elysium = "Allow Icarus in Elysium";
+    asphodel = {
+      description = "Allow Icarus in Asphodel";
+      order = 9,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    elysium = {
+      description = "Allow Icarus in Elysium";
+      order = 10,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
   };
   heracles = {
-    enabled = "Enable/disable Extended Heracles Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Heracles Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      order = 2,
+      min = 1;
+      max = 20;
+      step = 1;
+      editableContext = "mainMenu",
+    },
 
-    erebus = "Allow Heracles in Erebus";
-    oceanus = "Allow Heracles in Oceanus";
-    fields = "Allow Heracles in Fields";
-    tartarus = "Allow Heracles in Tartarus";
+    erebus = {
+      description = "Allow Heracles in Erebus";
+      order = 3
+    },
+    oceanus = {
+      description = "Allow Heracles in Oceanus";
+      order = 4
+    },
+    fields = {
+      description = "Allow Heracles in Fields";
+      order = 5
+    },
+    tartarus = {
+      description = "Allow Heracles in Tartarus";
+      order = 6
+    },
 
-    tartarus_nightmare = "Allow Heracles in Tartarus(Nightmare)";
-    asphodel = "Allow Heracles in Asphodel";
-    elysium = "Allow Heracles in Elysium";
+    tartarus_nightmare = {
+      displayName = "Tartarus(Nightmare)",
+      description = "Allow Heracles in Tartarus(Nightmare)";
+      order = 7,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    asphodel = {
+      description = "Allow Heracles in Asphodel";
+      order = 8,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    elysium = {
+      description = "Allow Heracles in Elysium";
+      order = 9,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
   };
   artemis = {
-    enabled = "Enable/disable Extended Artemis Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Artemis Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      order = 2,
+      min = 1;
+      max = 20;
+      step = 1;
+      editableContext = "mainMenu",
+    },
 
-    fields = "Allow Artemis in Fields";
-    tartarus = "Allow Artemis in Tartarus";
+    fields = {
+      description = "Allow Artemis in Fields";
+      order = 3,
+    },
+    tartarus = {
+      description = "Allow Artemis in Tartarus";
+      order = 4,
+    },
 
-    thessaly = "Allow Artemis in Thessaly";
-    olympus = "Allow Artemis in Olympus";
+    thessaly = {
+      description = "Allow Artemis in Thessaly";
+      order = 5,
+    },
+    olympus = {
+      description = "Allow Artemis in Olympus";
+      order = 6,
+    },
 
-    tartarus_nightmare = "Allow Artemis in Tartarus(Nightmare)";
-    elysium = "Allow Artemis in Elysium";
+    tartarus_nightmare = {
+      displayName = "Tartarus(Nightmare)",
+      description = "Allow Artemis in Tartarus(Nightmare)";
+      order = 7,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    elysium = {
+      description = "Allow Heracles in Elysium";
+      order = 8,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
   };
   nemesis = {
-    enabled = "Enable/disable Extended Nemesis Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Nemesis Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      order = 2,
+      min = 1;
+      max = 20;
+      step = 1;
+      editableContext = "mainMenu",
+    },
 
-    ephyra = "Allow Nemesis in Ephyra";
-    thessaly = "Allow Nemesis in Thessaly";
-    olympus = "Allow Nemesis in Olympus";
+    ephyra = {
+      description = "Allow Nemesis in Ephyra";
+      order = 3,
+    },
+    thessaly = {
+      description = "Allow Nemesis in Thessaly";
+      order = 4,
+    },
+    olympus = {
+      description = "Allow Nemesis in Olympus";
+      order = 5,
+    },
 
-    tartarus_nightmare = "Allow Nemesis in Tartarus(Nightmare)";
-    asphodel = "Allow Nemesis in Asphodel";
-    elysium = "Allow Nemesis in Elysium";
+    tartarus_nightmare = {
+      displayName = "Tartarus(Nightmare)",
+      description = "Allow Nemesis in Tartarus(Nightmare)";
+      order = 6,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    asphodel = {
+      description = "Allow Nemesis in Asphodel";
+      order = 8,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
+    elysium = {
+      description = "Allow Nemesis in Elysium";
+      order = 8,
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+    },
   };
   athena = {
-    enabled = "Enable/disable Extended Nemesis Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Athena Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      order = 2,
+      min = 1;
+      max = 20;
+      step = 1;
+      editableContext = "mainMenu",
+    },
 
-    erebus = "Allow Athena in Erebus";
-    oceanus = "Allow Athena in Oceanus";
-    tartarus = "Allow Athena in Tartarus";
+    erebus = {
+      description = "Allow Athena in Erebus";
+      order = 3,
+    },
+    oceanus = {
+      description = "Allow Athena in Oceanus";
+      order = 4,
+    },
+    tartarus = {
+      description = "Allow Athena in Tartarus";
+      order = 5,
+    },
 
-    ephyra = "Allow Athena in Ephyra";
+    ephyra = {
+      description = "Allow Athena in Erebus";
+      order = 6,
+    },
     -- thessaly = "Allow Athena in Thessaly";
 
-    -- tartarus_nightmare = "Allow Athena in Tartarus(Nightmare)";
-    -- asphodel = "Allow Athena in Asphodel";
-    -- elysium = "Allow Athena in Elysium";
+    tartarus_nightmare = {
+      displayName = "Tartarus(Nightmare)",
+      description = "Allow Athena in Tartarus(Nightmare)";
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+      order = 7,
+    },
+    asphodel = {
+      description = "Allow Athena in Asphodel";
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+      order = 8,
+    },
+    elysium = {
+      description = "Allow Athena in Elysium";
+      disabled = checkZagConfigDisabled,
+      disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
+      order = 9,
+    },
   };
   thanatos = {
-    enabled = "Enable/disable Extended Thanatos Encounters";
-    weight = "Weight range: 1-20";
+    enabled = {
+      description = "Enable/disable Extended Thanatos Encounters";
+      order = 1,
+      editableContext = "mainMenu",
+    },
+    weight = {
+      description = "Weight range: 1-20";
+      order = 2,
+      min = 1;
+      max = 20;
+      step = 1;
+      editableContext = "mainMenu",
+    },
+
+    disabled = checkZagConfigDisabled,
+    disabledDescription = "Zagreus' Journey integration is disabled or unvailable.",
 
     erebus = "Allow Thanatos in Erebus";
     oceanus = "Allow Thanatos in Oceanus";
@@ -164,8 +377,20 @@ local configDesc = {
     olympus = "Allow Thanatos in Olympus";
   };
 
-  zags_journey_integration = "Enable/Disable Zagreus' Journey integration";
-  dream_dive_only = "Allow new encounters in Dream Dives only";
+  zags_journey_integration = {
+    order = 3,
+    description = "Enable/Disable Zagreus' Journey integration";
+    displayName = "Zagreus' Journey integration";
+    editableContext = "mainMenu",
+    disabled = function()
+      return not (zj and zj.IsModEnabledAndInstallationValid and zj.IsModEnabledAndInstallationValid())
+    end,
+    disabledDescription = "Valid Zagreus' Journey install not found.",
+  },
+  dream_dive_only = {
+    order = 2,
+    description = "Allow new encounters in Dream Dives only";
+  }
 }
 
-return config, configDesc
+return config_default, configDesc
