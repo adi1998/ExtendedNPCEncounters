@@ -15,3 +15,6 @@
 tcli.exe
 
 /data/zerp-Extended_NPC_EncountersIcarusFx
+
+/__pycache__
+/textures
