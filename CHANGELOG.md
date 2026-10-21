@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Adjust Fields encounters to always spawn NPCs near Melinoe.
+- Load duplicated NPC assets included in the mod instead of loading whole Biome packages.
 
 ## [0.6.5] - 2026-08-26
 

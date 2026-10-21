@@ -4,7 +4,7 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedH" },
             DifficultyModifier = 170,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements =
             {
                 {
@@ -52,7 +52,7 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedI" },
             DifficultyModifier = 200,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements = {
 				Append = true,
 				{
@@ -67,7 +67,7 @@ local artemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedO" },
             DifficultyModifier = 180,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements =
             {
                 {
@@ -109,7 +109,7 @@ local artemisEncounters = {
             DifficultyModifier = 250,
             BlockMultipleEncounters = true,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements = {
 				Append = true,
 				{
@@ -127,7 +127,7 @@ local zagArtemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
             DifficultyModifier = 120,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements = {
 				Append = true,
 				{
@@ -142,7 +142,7 @@ local zagArtemisEncounters = {
             InheritFrom = { "BaseArtemisCombat", "GeneratedElysium" },
             DifficultyModifier = 150,
             CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", "BiomeF" },
+            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
             GameStateRequirements = {
 				Append = true,
 				{

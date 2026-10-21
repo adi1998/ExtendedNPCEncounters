@@ -16,7 +16,7 @@ local icarusEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "erebus"}
                 }
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         },
     },
 
@@ -37,7 +37,7 @@ local icarusEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "oceanus"}
                 }
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         },
     },
 
@@ -98,7 +98,7 @@ local icarusEncounters = {
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
                 NamedRequirementsFalse = { "StandardPackageBountyActive" },
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         },
     },
 
@@ -119,7 +119,7 @@ local icarusEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "tartarus"}
                 }
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         },
     },
 
@@ -154,7 +154,7 @@ local icarusEncounters = {
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         },
     },
 
@@ -189,7 +189,7 @@ local icarusEncounters = {
                 NamedRequirements = { "NoRecentFieldNPCEncounter" },
 			    NamedRequirementsFalse = { "StandardPackageBountyActive" },
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         }
     }
 }
@@ -207,7 +207,7 @@ local zagIcarusEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "asphodel"}
                 }
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         }
     },
     Elysium = {
@@ -222,7 +222,7 @@ local zagIcarusEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "icarus", "elysium"}
                 }
             },
-            LoadPackages = { "Icarus", "NPC_Icarus_01", "BiomeP" },
+            LoadPackages = { "Icarus", "NPC_Icarus_01", _PLUGIN.guid .. "Icarus", _PLUGIN.guid .. "IcarusFx" },
         }
     },
 }

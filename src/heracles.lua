@@ -230,7 +230,7 @@ local heraclesEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "erebus"}
                 }
 			},
-			LoadPackages = { "Heracles", "BiomeP" },
+			LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
         },
     },
 
@@ -247,7 +247,7 @@ local heraclesEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "oceanus"}
                 }
 			},
-			LoadPackages = { "Heracles", "BiomeP" },
+			LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
         },
     },
 
@@ -280,7 +280,7 @@ local heraclesEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "fields"}
                 },
 			},
-			LoadPackages = { "Heracles", "BiomeP" },
+			LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
         },
     },
 
@@ -297,7 +297,7 @@ local heraclesEncounters = {
                     PathTrue = {_PLUGIN.guid, "config", "heracles", "tartarus"}
                 }
 			},
-			LoadPackages = { "Heracles", "BiomeP" },
+			LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
         },
     },
 }
@@ -317,7 +317,7 @@ if mod.IsZag then
 						PathTrue = {_PLUGIN.guid, "config", "heracles", "tartarus_nightmare"}
 					}
 				},
-				LoadPackages = { "Heracles", "BiomeP" },
+				LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
 			},
 		},
 
@@ -334,7 +334,7 @@ if mod.IsZag then
 						PathTrue = {_PLUGIN.guid, "config", "heracles", "asphodel"}
 					}
 				},
-				LoadPackages = { "Heracles", "BiomeP" },
+				LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
 			},
 		},
 
@@ -351,7 +351,7 @@ if mod.IsZag then
 						PathTrue = {_PLUGIN.guid, "config", "heracles", "elysium"}
 					}
 				},
-				LoadPackages = { "Heracles", "BiomeP" },
+				LoadPackages = { "Heracles", _PLUGIN.guid .. "Heracles" },
 			},
 		}
 	}
