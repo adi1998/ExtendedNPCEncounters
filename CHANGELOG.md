@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-28
+
 - Adjust Fields encounters to always spawn NPCs near Melinoe.
 - Load duplicated NPC assets included in the mod instead of loading whole Biome packages.
 - Adjust Athena encounter's difficulty in Erebus.
@@ -84,7 +86,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.5...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.5...0.7.0
 [0.6.5]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.4...0.6.5
 [0.6.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.3...0.6.4
 [0.6.3]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.2...0.6.3
