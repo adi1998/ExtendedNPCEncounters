@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Adjust Athena encounter's difficulty in Tartarus(H1).
+
 ## [0.7.0] - 2026-10-28
 
 - Adjust Fields encounters to always spawn NPCs near Melinoe.
