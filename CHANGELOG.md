@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-10-29
+
 - Adjust Athena encounter's difficulty in Tartarus(H1).
 
 ## [0.7.0] - 2026-10-28
@@ -88,7 +90,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.0...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.1...HEAD
+[0.7.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.0...0.7.1
 [0.7.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.5...0.7.0
 [0.6.5]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.4...0.6.5
 [0.6.4]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.3...0.6.4
