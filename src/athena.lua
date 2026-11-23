@@ -176,28 +176,6 @@ local zagAthenaEncounters = {
             }
         }
     },
-    -- TODO: remove once implemented in ZJ
-    Elysium = {
-        AthenaCombatElysium = {
-            InheritFrom = {"BaseAthenaCombat", "GeneratedElysium"},
-            CanEncounterSkip = false,
-		    PauseDurationAfterPriorityGroup = 0.0,
-            DelayedStart = false,
-            BaseDifficulty = 800,
-            DepthDifficultyRamp = 180,
-            MaxTypes = 5,
-            MaxTypesCap = 7,
-            MaxEliteTypes = 4,
-            ActiveEnemyCapBase = 7,
-		    ActiveEnemyCapMax = 7,
-            GameStateRequirements = {
-                Append = true,
-                {
-                    PathTrue = {_PLUGIN.guid, "config", "athena", "elysium"}
-                },
-            }
-        }
-    },
 }
 
 if mod.IsZag then

@@ -120,43 +120,6 @@ local artemisEncounters = {
     },
 }
 
-local zagArtemisEncounters = {
-    -- TODO: remove once implemented in ZJ
-    Tartarus = {
-        ArtemisCombatTartarus = {
-            InheritFrom = { "BaseArtemisCombat", "GeneratedTartarus" },
-            DifficultyModifier = 120,
-            CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
-            GameStateRequirements = {
-				Append = true,
-				{
-                    PathTrue = {_PLUGIN.guid, "config", "artemis", "tartarus_nightmare"}
-                }
-			}
-        }
-    },
-    -- TODO: remove once implented in ZJ
-    Elysium = {
-        ArtemisCombatElysium = {
-            InheritFrom = { "BaseArtemisCombat", "GeneratedElysium" },
-            DifficultyModifier = 150,
-            CanEncounterSkip = false,
-            LoadPackages = { "NPC_Artemis_Field_01", "Artemis", _PLUGIN.guid .. "Artemis" },
-            GameStateRequirements = {
-				Append = true,
-				{
-                    PathTrue = {_PLUGIN.guid, "config", "artemis", "elysium"}
-                }
-			}
-        }
-    }
-}
-
-if mod.IsZag then
-    game.OverwriteTableKeys(artemisEncounters, zagArtemisEncounters)
-end
-
 local weight = config.artemis.weight
 weight = mod.clampweight(weight)
 
