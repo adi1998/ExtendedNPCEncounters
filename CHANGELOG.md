@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Fix unintended behavior in custom Thanatos encounters.
+
 ## [0.7.1] - 2026-10-29
 
 - Adjust Athena encounter's difficulty in Tartarus(H1).

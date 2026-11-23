@@ -29,7 +29,7 @@ local thanatosEncounters = {
                     },
                 },
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                    FunctionName = _PLUGIN.guid .. "." .. "InitThanEncounter",
                 }
             },
             GameStateRequirements = {
@@ -91,7 +91,7 @@ local thanatosEncounters = {
                     },
                 },
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                    FunctionName = _PLUGIN.guid .. "." .. "InitThanEncounter",
                 }
             },
             GameStateRequirements = {
@@ -155,7 +155,7 @@ local thanatosEncounters = {
                     },
                 },
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                    FunctionName = _PLUGIN.guid .. "." .. "InitThanEncounter",
                 }
             },
             GameStateRequirements = {
@@ -216,7 +216,7 @@ local thanatosEncounters = {
                     },
                 },
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                    FunctionName = _PLUGIN.guid .. "." .. "InitThanEncounter",
                 }
             },
             GameStateRequirements = {
@@ -281,7 +281,7 @@ local thanatosEncounters = {
                     },
                 },
                 {
-                    FunctionName = _PLUGIN.guid .. "." .. "LoadThanatosMusic",
+                    FunctionName = _PLUGIN.guid .. "." .. "InitThanEncounter",
                 }
             },
             GameStateRequirements = {
@@ -317,14 +317,43 @@ local thanatosEncounters = {
 local weight = config.thanatos.weight
 weight = mod.clampweight(weight)
 
-mod.AddNewEncounters(thanatosEncounters, weight, {
-    game.NamedRequirementsData.NoRecentFieldNPCEncounter[1].TableValuesToCount,
-    game.EncounterData["OpeningGenerated"].StartRoomUnthreadedEvents[1].GameStateRequirements[1].HasAny,
-})
+local tableIndexArray = {
+    {"NamedRequirementsData", "NoRecentFieldNPCEncounter", 1, "TableValuesToCount"},
+    {"EncounterData", "OpeningGenerated", "StartRoomUnthreadedEvents", 1, "GameStateRequirements", 1, "HasAny"},
+    {"EnemyData", "NPC_Thanatos_01", "ActivateRequirements", 3, "HasAny"}
+}
 
-function mod.LoadThanatosMusic()
+local tableArray = {}
+
+for index, array in ipairs(tableIndexArray) do
+    local tbl = modutil.mod.IndexArray.Get(game, array)
+    if tbl then
+        print (index, mod.dump(array))
+        table.insert(tableArray, tbl)
+    end
+end
+
+mod.AddNewEncounters(thanatosEncounters, weight, tableArray)
+
+function mod.InitThanEncounter()
+
+    game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = true
+    game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = true
+
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
         "Content\\Audio\\Desktop\\" .. "ModsNikkelMHadesBiomesMusicModded" .. ".bank"))
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
         "Content\\Audio\\Desktop\\" .. "SoundsModsNikkelMHadesBiomes" .. ".bank"))
 end
+
+modutil.mod.Path.Wrap("LeaveRoom", function (base, currentRun, door)
+    local ret_val = base(currentRun, door)
+    if game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom and not door.Room["zerp-NPCRoomRandomizer" .. "CurrentBiome"] then
+        game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = nil
+        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = nil
+    end
+    if game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom then
+        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = nil
+    end
+    return ret_val
+end)
