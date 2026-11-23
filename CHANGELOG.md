@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Fix unintended behavior in custom Thanatos encounters.
+- Remove encounters that are now part of Zagreus Journey.
 
 ## [0.7.1] - 2026-10-29
 
