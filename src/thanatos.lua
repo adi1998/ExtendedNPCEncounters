@@ -317,18 +317,21 @@ local thanatosEncounters = {
 local weight = config.thanatos.weight
 weight = mod.clampweight(weight)
 
+local thanEncounterList = {}
+
 local tableIndexArray = {
     {"NamedRequirementsData", "NoRecentFieldNPCEncounter", 1, "TableValuesToCount"},
     {"EncounterData", "OpeningGenerated", "StartRoomUnthreadedEvents", 1, "GameStateRequirements", 1, "HasAny"},
     {"EnemyData", "NPC_Thanatos_01", "ActivateRequirements", 3, "HasAny"}
 }
 
-local tableArray = {}
+local tableArray = {
+    thanEncounterList,
+}
 
 for index, array in ipairs(tableIndexArray) do
     local tbl = modutil.mod.IndexArray.Get(game, array)
     if tbl then
-        print (index, mod.dump(array))
         table.insert(tableArray, tbl)
     end
 end
@@ -345,6 +348,14 @@ function mod.InitThanEncounter()
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
         "Content\\Audio\\Desktop\\" .. "SoundsModsNikkelMHadesBiomes" .. ".bank"))
 end
+
+modutil.mod.Path.Wrap("StartRoom", function (base, currentRun, currentRoom)
+    if game.Contains(thanEncounterList, currentRoom.Encounter.Name) then
+        game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = true
+        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = true
+    end
+    return base(currentRun, currentRoom)
+end)
 
 modutil.mod.Path.Wrap("LeaveRoom", function (base, currentRun, door)
     local ret_val = base(currentRun, door)
