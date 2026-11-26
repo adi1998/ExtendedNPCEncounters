@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-11-26
+
 - Fix unintended behavior in custom Thanatos encounters.
 - Remove encounters that are now part of Zagreus Journey.
 
@@ -93,7 +95,8 @@
 
 - First version of the mod
 
-[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.1...HEAD
+[unreleased]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.8.0...HEAD
+[0.8.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.1...0.8.0
 [0.7.1]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.7.0...0.7.1
 [0.7.0]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.5...0.7.0
 [0.6.5]: https://github.com/adi1998/ExtendedNPCEncounters/compare/0.6.4...0.6.5
