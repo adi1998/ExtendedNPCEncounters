@@ -339,10 +339,6 @@ end
 mod.AddNewEncounters(thanatosEncounters, weight, tableArray)
 
 function mod.InitThanEncounter()
-
-    game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = true
-    game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = true
-
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
         "Content\\Audio\\Desktop\\" .. "ModsNikkelMHadesBiomesMusicModded" .. ".bank"))
     rom.audio.load_bank(rom.path.combine(rom.paths.plugins_data(), "NikkelM-Zagreus_Journey",
@@ -350,21 +346,23 @@ function mod.InitThanEncounter()
 end
 
 modutil.mod.Path.Wrap("StartRoom", function (base, currentRun, currentRoom)
-    if game.Contains(thanEncounterList, currentRoom.Encounter.Name) then
+    local isThanMulitple = false
+    for _, encounter in ipairs(currentRoom.Encounters or {}) do
+        isThanMulitple = isThanMulitple or game.Contains(thanEncounterList, encounter.Name)
+    end
+    if game.Contains(thanEncounterList, currentRoom.Encounter.Name) or isThanMulitple then
         game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = true
-        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = true
+        game.CurrentRun.CurrentRoom.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = true
     end
     return base(currentRun, currentRoom)
 end)
 
 modutil.mod.Path.Wrap("LeaveRoom", function (base, currentRun, door)
-    local ret_val = base(currentRun, door)
-    if game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom and not door.Room["zerp-NPCRoomRandomizer" .. "CurrentBiome"] then
-        game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = nil
-        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = nil
+    if game.CurrentRun.CurrentRoom.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom then
+        if not door.Room["zerp-NPCRoomRandomizer" .. "CurrentBiome"] then
+            game.CurrentRun.ModsNikkelMHadesBiomesIsModdedRun = nil
+        end
+        game.CurrentRun.CurrentRoom.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = nil
     end
-    if game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom then
-        game.CurrentRun.Revert_ModsNikkelMHadesBiomesIsModdedRun_LeaveRoom = nil
-    end
-    return ret_val
+    return base(currentRun, door)
 end)
