@@ -4,6 +4,7 @@
 
 ## [0.8.0] - 2026-11-26
 
+- Update for Zagreus' Journey 2.0.
 - Fix unintended behavior in custom Thanatos encounters.
 - Remove encounters that are now part of Zagreus Journey.
 
